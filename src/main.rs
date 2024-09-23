@@ -2,7 +2,7 @@ use std::path::PathBuf;
 
 use clap::Parser;
 
-mod templates;
+mod load_json_resume;
 
 /// Program for generating a resume from JSONResume data.
 #[derive(Parser, Debug)]
