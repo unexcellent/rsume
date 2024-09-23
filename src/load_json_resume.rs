@@ -1,6 +1,6 @@
 use std::{error::Error, fs, path::PathBuf};
 
-pub fn load_json_resume(path: PathBuf) -> Result<json_resume::Resume, Box<dyn Error>> {
+pub fn load_json_resume(path: &PathBuf) -> Result<json_resume::Resume, Box<dyn Error>> {
     let contents = fs::read_to_string(&path)?;
     let resume_data = match path.extension().unwrap().to_str() {
         Some("json") => serde_json::from_str(&contents)?,
@@ -33,7 +33,7 @@ pub mod tests {
         let file_path = tmp_dir.path().join("resume.json");
         fs::write(&file_path, contents).unwrap();
 
-        let resume_data = load_json_resume(file_path).unwrap();
+        let resume_data = load_json_resume(&file_path).unwrap();
         assert_eq!(resume_data.basics.unwrap().name, Some("Kirk".to_string()));
     }
 
@@ -48,7 +48,7 @@ pub mod tests {
         let file_path = tmp_dir.path().join("resume.yaml");
         fs::write(&file_path, contents).unwrap();
 
-        let resume_data = load_json_resume(file_path).unwrap();
+        let resume_data = load_json_resume(&file_path).unwrap();
         assert_eq!(resume_data.basics.unwrap().name, Some("Kirk".to_string()));
     }
 
@@ -60,7 +60,7 @@ pub mod tests {
         let file_path = tmp_dir.path().join("resume.UNSUPPORTED");
         fs::write(&file_path, contents).unwrap();
 
-        let resume_data = load_json_resume(file_path);
+        let resume_data = load_json_resume(&file_path);
         assert!(resume_data.is_err());
     }
 }
