@@ -46,4 +46,26 @@
     font-family: 'Verdana';
     font-size: 16pt;
 }
-  
+
+.contact-info {
+    display: grid;
+    grid-column: 3;
+    gap: 5pt;
+    justify-items: center;
+}
+
+.email-icon {
+    grid-row: 1;
+    grid-column: 1;
+    width: 17pt;
+    height: 17pt;
+}
+
+.email {
+    grid-row: 1;
+    grid-column: 2;
+
+    color: black;
+    font-family: 'Verdana';
+    font-size: 12pt;
+}

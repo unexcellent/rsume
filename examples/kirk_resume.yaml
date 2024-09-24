@@ -2,3 +2,5 @@ basics:
   name: James T. Kirk
   label: Starfleet Captain
   image: "kirk.jpg"
+  email: "kirk@starfleet.int"
+  phone: "1-919-271-0076"

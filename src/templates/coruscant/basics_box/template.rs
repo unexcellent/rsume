@@ -12,6 +12,9 @@ impl BasicsBox {
         let name = &self.resume_data.basics.name;
         let image = &self.resume_data.basics.image;
         let label = &self.resume_data.basics.label;
+        let email = &self.resume_data.basics.email;
+
+        let email_icon = include_str!("icons/email.svg");
 
         let html = format!(
             "
@@ -26,6 +29,14 @@ impl BasicsBox {
                         </div>
                         <div class='label'>
                             {label}
+                        </div>
+                    </div>
+                    <div class='contact-info'>
+                        <div class='email-icon'>
+                            {email_icon}
+                        </div>
+                        <div class='email'>
+                            {email}
                         </div>
                     </div>
                 </div>

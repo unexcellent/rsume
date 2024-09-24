@@ -21,26 +21,33 @@ pub struct Basics {
     pub name: String,
     pub label: String,
     pub image: String,
+    pub email: String,
 }
 impl Basics {
     pub fn try_from(basics: json_resume::Basics) -> Result<Self, String> {
         Ok(Self {
             name: match basics.name {
-                Some(n) => n,
+                Some(s) => s,
                 None => {
                     return Err("The field basics.name is required for this template.".to_string())
                 }
             },
             label: match basics.label {
-                Some(l) => l,
+                Some(s) => s,
                 None => {
                     return Err("The field basics.label is required for this template.".to_string())
                 }
             },
             image: match basics.image {
-                Some(n) => n,
+                Some(s) => s,
                 None => {
                     return Err("The field basics.image is required for this template.".to_string())
+                }
+            },
+            email: match basics.email {
+                Some(s) => s,
+                None => {
+                    return Err("The field basics.email is required for this template.".to_string())
                 }
             },
         })
