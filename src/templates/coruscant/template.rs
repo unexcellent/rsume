@@ -1,6 +1,9 @@
 use json_resume::Resume;
 
-use super::{basics::basics_box::BasicsBox, supported_resume_data::SupportedResumeData};
+use super::{
+    basics::basics_box::BasicsBox, education::education_wrapper::EducationWrapper,
+    supported_resume_data::SupportedResumeData,
+};
 
 #[allow(dead_code)]
 pub struct Coruscant {
@@ -19,6 +22,7 @@ impl Coruscant {
         let style = include_str!("style.css");
 
         let basics = BasicsBox::from(self.resume_data.clone()).build();
+        let education = EducationWrapper::from(self.resume_data.clone()).build();
 
         let html = format!(
             "
@@ -29,13 +33,14 @@ impl Coruscant {
     <body>
         <div class='root'>
             {basics}
+            {education}
         </div>
     </body>
 </html>
         "
         );
 
-        html.to_string()
+        html
     }
 }
 

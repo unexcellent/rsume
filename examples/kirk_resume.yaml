@@ -9,3 +9,8 @@ basics:
     postalCode: "52327"
     city: "Riverside"
     countryCode: "IA"
+
+education:
+  - institution: Starfleet Academy
+    startDate: Jan. 2252
+    endDate: Nov. 2252
