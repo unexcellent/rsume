@@ -10,6 +10,4 @@ json-resume = "0.2.0"
 serde_json = "1.0.128"
 serde_yaml = "0.9.34"
 typed-html = { git = "https://github.com/bodil/typed-html", rev = "4c13ecca" }
-
-[dev-dependencies]
 tempfile = "3.12.0"

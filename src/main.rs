@@ -34,5 +34,5 @@ fn main() {
     let template = Coruscant::new(resume_data);
 
     let html_resume = template.build();
-    save_to_pdf(html_resume, &args.target_path);
+    save_to_pdf(html_resume, &args.target_path).expect("Failed to write to PDF.");
 }
