@@ -5,6 +5,8 @@
   color: black;
   font-family: 'Verdana';
   font-size: 14pt;
+
+  background-color: #f4f4f4;
 }
 
 .default-box {
@@ -104,7 +106,7 @@
 
 .entry {
   display: grid;
-  grid-template-columns: 1fr 82.5%;
+  grid-template-columns: 1fr auto 82.5%;
   gap: 5pt;
   margin-top: 8pt;
   margin-left: 2.5%;
@@ -131,8 +133,44 @@
   grid-row: 3;
 }
 
+.timeline {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-content: center;
+  padding-top: 16pt;
+  padding-bottom: 15pt;
+}
+
+.top-circle, .bottom-circle {
+  width: 7pt;
+  height: 7pt;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.top-circle {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.line {
+  margin-top: 3pt;
+  margin-bottom: 3pt;
+  margin-left: 2.5pt;
+
+  grid-row: 1/4;
+  grid-column: 1;
+  width: 2pt;
+  background-color: black;
+}
+
+.bottom-circle {
+  grid-row: 3;
+  grid-column: 1;
+}
+
 .box-column {
-  grid-column: 2;
+  grid-column: 3;
   height: fit-content;
 
   background-color: white;
@@ -143,6 +181,7 @@
 
 .entry-title {
   font-weight: bold;
+  
   margin-bottom: 10pt;
   align-content: start;
 }

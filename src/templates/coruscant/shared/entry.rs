@@ -22,6 +22,11 @@ impl Entry {
                         {start_date}
                     </div>
                 </div>
+                <div class='timeline'>
+                    <div class='top-circle'></div>
+                    <div class='line'></div>
+                    <div class='bottom-circle'></div>
+                </div>
                 <div class='box-column'>
                         <div class='entry-title'>
                             {title}
