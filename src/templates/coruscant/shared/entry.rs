@@ -1,4 +1,3 @@
-#[allow(dead_code)]
 pub struct Entry {
     pub start_date: String,
     pub end_date: String,
@@ -7,6 +6,34 @@ pub struct Entry {
 }
 impl Entry {
     pub fn build(&self) -> String {
-        String::new()
+        let end_date = &self.end_date;
+        let start_date = &self.start_date;
+        let title = &self.title;
+        let body = &self.body;
+
+        let html = format!(
+            "
+            <div class='entry'>
+                <div class='timespan-column'>
+                    <div class='end-date'>
+                        {end_date}
+                    </div>
+                    <div class='start-date'>
+                        {start_date}
+                    </div>
+                </div>
+                <div class='box-column'>
+                        <div class='entry-title'>
+                            {title}
+                        </div>
+                        <div class='entry-body'>
+                            {body}
+                        </div>
+                </div>
+            </div>
+        "
+        );
+
+        html
     }
 }

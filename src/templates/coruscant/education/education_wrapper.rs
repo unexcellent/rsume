@@ -39,10 +39,20 @@ fn build_entries(education: &Vec<Education>) -> String {
             start_date: education_entry.start_date.clone(),
             end_date: education_entry.end_date.clone(),
             title: education_entry.institution.clone(),
-            body: "IF YOU SEE THIS THEN A FIELD STILL NEEDS TO BE SET".to_string(),
+            body: build_entry_body(education_entry),
         };
         entries_html.push_str(&entry.build());
     }
 
     entries_html
+}
+
+fn build_entry_body(education_entry: &Education) -> String {
+    let study_type = match education_entry.clone().study_type {
+        None => "".to_string(),
+        Some(s) => format!("{s} in "),
+    };
+    let area = education_entry.clone().area;
+
+    format!("{study_type}{area}")
 }

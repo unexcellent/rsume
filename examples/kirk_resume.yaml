@@ -14,3 +14,5 @@ education:
   - institution: Starfleet Academy
     startDate: Jan. 2252
     endDate: Nov. 2252
+    studyType: "Master"
+    area: "Starship Operations"
