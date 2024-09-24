@@ -4,3 +4,8 @@ basics:
   image: "kirk.jpg"
   email: "kirk@starfleet.int"
   phone: "1-919-271-0076"
+  location:
+    address: "1234 Sunny Ave."
+    postalCode: "52327"
+    city: "Riverside"
+    countryCode: "IA"

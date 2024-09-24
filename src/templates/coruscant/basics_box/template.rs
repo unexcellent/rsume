@@ -14,9 +14,14 @@ impl BasicsBox {
         let label = &self.resume_data.basics.label;
         let email = &self.resume_data.basics.email;
         let phone = &self.resume_data.basics.phone;
+        let address = &self.resume_data.basics.location.address;
+        let city = &self.resume_data.basics.location.city;
+        let postal_code = &self.resume_data.basics.location.postal_code;
+        let country_code = &self.resume_data.basics.location.country_code;
 
         let email_icon = include_str!("icons/email.svg");
         let phone_icon = include_str!("icons/phone.svg");
+        let address_icon = include_str!("icons/address.svg");
 
         let html = format!(
             "
@@ -45,6 +50,13 @@ impl BasicsBox {
                         </div>
                         <div class='phone'>
                             {phone}
+                        </div>
+                        <div class='address-icon'>
+                            {address_icon}
+                        </div>
+                        <div class='address'>
+                            {address}, <br>
+                            {postal_code} {city}, {country_code}
                         </div>
                     </div>
                 </div>
