@@ -24,20 +24,20 @@ impl Coruscant {
             "
 <html>
     <head>
-        <title>\"Hello world\"</title>
+        <title>'Hello world'</title>
     </head>
     <body>
-        <div class=\"root\">
-            <div class=\"basics-box\">
-                <div class=\"basics-wrapper\">
-                    <div class=\"profile-image\">
-                        <img src=\"{image}\">
+        <div class='root'>
+            <div class='basics-box'>
+                <div class='basics-wrapper'>
+                    <div class='profile-image'>
+                        <img src='{image}'>
                     </div>
-                    <div class=\"name-and-label\">
-                        <div class=\"name\">
+                    <div class='name-and-label'>
+                        <div class='name'>
                             {name}
                         </div>
-                        <div class=\"label\">
+                        <div class='label'>
                             {label}
                         </div>
                     </div>
