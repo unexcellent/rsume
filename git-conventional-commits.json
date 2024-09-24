@@ -13,7 +13,8 @@
             "revert",
             "test",
 
-            "lint"
+            "lint",
+            "style"
         ],
         "commitScopes": []
     }

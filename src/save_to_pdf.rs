@@ -18,6 +18,7 @@ pub fn save_to_pdf(html_resume: String, target_path: &PathBuf) -> Result<(), Box
             margin_top: Some(0.0),
             margin_left: Some(0.0),
             margin_right: Some(0.0),
+            print_background: Some(true),
             ..PrintToPdfOptions::default()
         }))?;
 
