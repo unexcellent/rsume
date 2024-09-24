@@ -30,7 +30,7 @@ impl Coruscant {
     <head>
         <style>{style}</style>
     </head>
-    <body>
+    <body style='background-color: #F4F4F4;'>
         <div class='root'>
             {basics}
             {education}

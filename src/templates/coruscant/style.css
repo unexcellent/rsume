@@ -5,14 +5,12 @@
   color: black;
   font-family: 'Verdana';
   font-size: 14pt;
-
-  background-color: #f4f4f4;
 }
 
 .default-box {
   background-color: white;
   border-radius: 15pt;
-  box-shadow: 0 0 50pt rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 50pt rgba(0, 0, 0, 0.3);
   padding: 20pt;
 }
 
@@ -101,7 +99,7 @@
   margin-top: 15pt;
   margin-left: 125pt;
 
-  font-size: 20pt;
+  font-size: 18pt;
 }
 
 .entry {
@@ -175,13 +173,13 @@
 
   background-color: white;
   border-radius: 15pt;
-  box-shadow: 0 0 50pt rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 50pt rgba(0, 0, 0, 0.3);
   padding: 12pt;
 }
 
 .entry-title {
   font-weight: bold;
-  
+
   margin-bottom: 10pt;
   align-content: start;
 }
