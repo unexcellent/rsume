@@ -1,7 +1,7 @@
 use json_resume;
 
-#[allow(dead_code)]
 /// The template requires some fields in the resume data that are optional in json_resume. These structs simplify the generation process.
+#[derive(Clone, Debug)]
 pub struct SupportedResumeData {
     pub basics: Basics,
 }
@@ -16,7 +16,7 @@ impl SupportedResumeData {
     }
 }
 
-#[allow(dead_code)]
+#[derive(Clone, Debug)]
 pub struct Basics {
     pub name: String,
     pub label: String,

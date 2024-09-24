@@ -1,6 +1,6 @@
 use json_resume::Resume;
 
-use super::supported_resume_data::SupportedResumeData;
+use super::{basics_box::template::BasicsBox, supported_resume_data::SupportedResumeData};
 
 #[allow(dead_code)]
 pub struct Coruscant {
@@ -16,11 +16,9 @@ impl Coruscant {
 
     /// Build the resume as printable HTML.
     pub fn build(&self) -> String {
-        let name = self.resume_data.basics.name.clone();
-        let image = self.resume_data.basics.image.clone();
-        let label = self.resume_data.basics.label.clone();
-
         let style = include_str!("style.css");
+
+        let basics = BasicsBox::from(self.resume_data.clone()).build();
 
         let html = format!(
             "
@@ -30,21 +28,7 @@ impl Coruscant {
     </head>
     <body>
         <div class='root'>
-            <div class='basics-box'>
-                <div class='basics-wrapper'>
-                    <div class='profile-image'>
-                        <img src='{image}'>
-                    </div>
-                    <div class='name-and-label'>
-                        <div class='name'>
-                            {name}
-                        </div>
-                        <div class='label'>
-                            {label}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {basics}
         </div>
     </body>
 </html>
