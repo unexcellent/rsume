@@ -12,7 +12,7 @@ pub fn generate_pdf(resume_data_path: PathBuf, target_path: PathBuf) {
         basics.image = resolve_image_path(&resume_data_path, &basics.image);
     }
 
-    let template = Coruscant::new(resume_data);
+    let template = Coruscant::try_from(resume_data).unwrap();
 
     let html_resume = template.build();
     save_to_pdf(html_resume, &target_path).expect("Failed to write to PDF.");

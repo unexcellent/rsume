@@ -1,14 +1,17 @@
 use json_resume::Resume;
 
+use super::supported_resume_data::SupportedResumeData;
+
+#[allow(dead_code)]
 pub struct Coruscant {
-    _resume_data: Resume,
+    resume_data: SupportedResumeData,
 }
 
 impl Coruscant {
-    pub fn new(json_resume_data: Resume) -> Self {
-        Coruscant {
-            _resume_data: json_resume_data,
-        }
+    pub fn try_from(json_resume_data: Resume) -> Result<Self, String> {
+        Ok(Coruscant {
+            resume_data: SupportedResumeData::try_from(json_resume_data)?,
+        })
     }
 
     /// Build the resume as printable HTML.
@@ -40,7 +43,9 @@ pub mod tests {
         let target_path = PathBuf::from("examples/coruscant.pdf");
         let html_target_path = resume_data_path.parent().unwrap().join("coruscant.html");
 
-        let generated_html = Coruscant::new(load_json_resume(&resume_data_path).unwrap()).build();
+        let generated_html = Coruscant::try_from(load_json_resume(&resume_data_path).unwrap())
+            .unwrap()
+            .build();
 
         if let Ok(previous_html) = fs::read(&html_target_path) {
             if Vec::<u8>::from(generated_html.clone()) == previous_html {
