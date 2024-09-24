@@ -1,6 +1,6 @@
 use json_resume::Resume;
 
-use super::{basics_box::template::BasicsBox, supported_resume_data::SupportedResumeData};
+use super::{basics::basics_box::BasicsBox, supported_resume_data::SupportedResumeData};
 
 #[allow(dead_code)]
 pub struct Coruscant {

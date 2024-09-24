@@ -1,3 +1,3 @@
-mod basics_box;
+mod basics;
 mod supported_resume_data;
 pub mod template;
