@@ -3,7 +3,7 @@ use json_resume;
 #[allow(dead_code)]
 /// The template requires some fields in the resume data that are optional in json_resume. These structs simplify the generation process.
 pub struct SupportedResumeData {
-    basics: Basics,
+    pub basics: Basics,
 }
 impl SupportedResumeData {
     pub fn try_from(resume_data: json_resume::Resume) -> Result<Self, String> {
@@ -18,9 +18,9 @@ impl SupportedResumeData {
 
 #[allow(dead_code)]
 pub struct Basics {
-    name: String,
-    label: String,
-    image: String,
+    pub name: String,
+    pub label: String,
+    pub image: String,
 }
 impl Basics {
     pub fn try_from(basics: json_resume::Basics) -> Result<Self, String> {

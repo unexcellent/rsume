@@ -16,16 +16,38 @@ impl Coruscant {
 
     /// Build the resume as printable HTML.
     pub fn build(&self) -> String {
-        let html = "
-            <html>
-                <head>
-                    <title>\"Hello world\"</title>
-                </head>
-                <body>
-                    <h1>\"Hello world\"</h1>
-                </body>
-            </html>
-        ";
+        let name = self.resume_data.basics.name.clone();
+        let image = self.resume_data.basics.image.clone();
+        let label = self.resume_data.basics.label.clone();
+
+        let html = format!(
+            "
+<html>
+    <head>
+        <title>\"Hello world\"</title>
+    </head>
+    <body>
+        <div class=\"root\">
+            <div class=\"basics-box\">
+                <div class=\"basics-wrapper\">
+                    <div class=\"profile-image\">
+                        <img src=\"{image}\">
+                    </div>
+                    <div class=\"name-and-label\">
+                        <div class=\"name\">
+                            {name}
+                        </div>
+                        <div class=\"label\">
+                            {label}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+        "
+        );
 
         html.to_string()
     }
