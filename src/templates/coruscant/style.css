@@ -51,7 +51,7 @@
     display: grid;
     grid-column: 3;
     gap: 5pt;
-    justify-items: center;
+    align-items: center;
 }
 
 .email-icon {
@@ -63,6 +63,22 @@
 
 .email {
     grid-row: 1;
+    grid-column: 2;
+
+    color: black;
+    font-family: 'Verdana';
+    font-size: 12pt;
+}
+
+.phone-icon {
+    grid-row: 2;
+    grid-column: 1;
+    width: 17pt;
+    height: 17pt;
+}
+
+.phone {
+    grid-row: 2;
     grid-column: 2;
 
     color: black;

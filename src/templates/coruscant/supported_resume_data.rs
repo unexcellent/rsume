@@ -22,6 +22,7 @@ pub struct Basics {
     pub label: String,
     pub image: String,
     pub email: String,
+    pub phone: String,
 }
 impl Basics {
     pub fn try_from(basics: json_resume::Basics) -> Result<Self, String> {
@@ -48,6 +49,12 @@ impl Basics {
                 Some(s) => s,
                 None => {
                     return Err("The field basics.email is required for this template.".to_string())
+                }
+            },
+            phone: match basics.phone {
+                Some(s) => s,
+                None => {
+                    return Err("The field basics.phone is required for this template.".to_string())
                 }
             },
         })
