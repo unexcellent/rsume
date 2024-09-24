@@ -1,3 +1,3 @@
 pub mod coruscant;
 
-pub use crate::templates::coruscant::coruscant::Coruscant;
+pub use crate::templates::coruscant::template::Coruscant;

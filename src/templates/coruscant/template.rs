@@ -4,7 +4,7 @@ use typed_html::dom::DOMTree;
 pub struct Coruscant;
 
 impl Coruscant {
-    pub fn new(json_resume_data: Resume) -> Self {
+    pub fn new(_json_resume_data: Resume) -> Self {
         unimplemented!()
     }
 

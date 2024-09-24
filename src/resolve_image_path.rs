@@ -1,10 +1,7 @@
-use std::path::PathBuf;
+use std::path::Path;
 
 /// Image paths can either be given as absolute or relative paths from the JSONResume file. This function resolves relative paths.
-pub fn resolve_image_path(
-    resume_data_path: &PathBuf,
-    image_path: &Option<String>,
-) -> Option<String> {
+pub fn resolve_image_path(resume_data_path: &Path, image_path: &Option<String>) -> Option<String> {
     image_path.as_ref().map(|path| {
         resume_data_path
             .parent()
@@ -19,6 +16,7 @@ pub fn resolve_image_path(
 #[cfg(test)]
 pub mod tests {
     use super::*;
+    use std::path::PathBuf;
 
     #[test]
     fn none() {

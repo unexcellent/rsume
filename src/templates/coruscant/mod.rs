@@ -1,1 +1,1 @@
-pub mod coruscant;
+pub mod template;
