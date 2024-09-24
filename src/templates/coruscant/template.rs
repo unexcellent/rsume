@@ -20,67 +20,13 @@ impl Coruscant {
         let image = self.resume_data.basics.image.clone();
         let label = self.resume_data.basics.label.clone();
 
+        let style = include_str!("style.css");
+
         let html = format!(
             "
 <html>
     <head>
-        <style>
-            .root {{
-                padding: 2.5%;
-                padding-top: 3%;
-                width: 100%;
-                height: 100%;
-                color: #f4f4f4;
-            }}
-
-            .basics-box {{
-                width: 89%;
-                height: fit-content;
-                padding: 20pt;
-                
-                background-color: white;
-                border-radius: 20pt;
-                box-shadow: 0 0 50pt rgba(0, 0, 0, 0.2);
-            }}
-
-            .basics-wrapper {{
-                height: 80pt;
-                display: flex;
-                display: -webkit-flex;
-                flex-direction: row;
-                justify-content: center;
-                -webkit-box-align: center;
-                margin: auto;
-            }}
-
-            .profile-image img {{
-                width: 80pt;
-                height: 80pt;
-                border-radius: 50%;
-                align-self: center;
-                justify-self: center;
-            }}
-
-            .name-and-label {{
-                align-self: center;
-                justify-self: center;
-            }}
-
-            .name {{
-                color: black;
-                font-family: 'Verdana';
-                font-size: 24pt;
-                font-weight: bold;
-                margin-bottom: 10pt;
-            }}
-
-            .label {{
-                color: black;
-                font-family: 'Verdana';
-                font-size: 16pt;
-            }}
-            
-        </style>
+        <style>{style}</style>
     </head>
     <body>
         <div class='root'>

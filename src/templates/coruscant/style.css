@@ -1,7 +1,4 @@
-
-<html>
-    <head>
-        <style>.root {
+.root {
     padding: 2.5%;
     padding-top: 3%;
     width: 100%;
@@ -55,26 +52,4 @@
     font-family: 'Verdana';
     font-size: 16pt;
 }
-  </style>
-    </head>
-    <body>
-        <div class='root'>
-            <div class='basics-box'>
-                <div class='basics-wrapper'>
-                    <div class='profile-image'>
-                        <img src='kirk.jpg'>
-                    </div>
-                    <div class='name-and-label'>
-                        <div class='name'>
-                            James T. Kirk
-                        </div>
-                        <div class='label'>
-                            Starfleet Captain
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
-        
+  
