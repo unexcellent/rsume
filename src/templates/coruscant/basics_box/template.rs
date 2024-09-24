@@ -26,37 +26,39 @@ impl BasicsBox {
         let html = format!(
             "
             <div class='basics-box'>
-                <div class='basics-wrapper'>
-                    <div class='profile-image'>
-                        <img src='{image}'>
-                    </div>
-                    <div class='name-and-label'>
-                        <div class='name'>
-                            {name}
+                <div class='default-box'>
+                    <div class='basics-wrapper'>
+                        <div class='profile-image'>
+                            <img src='{image}'>
                         </div>
-                        <div class='label'>
-                            {label}
+                        <div class='name-and-label'>
+                            <div class='name'>
+                                {name}
+                            </div>
+                            <div class='label'>
+                                {label}
+                            </div>
                         </div>
-                    </div>
-                    <div class='contact-info'>
-                        <div class='email-icon'>
-                            {email_icon}
-                        </div>
-                        <div class='email'>
-                            {email}
-                        </div>
-                        <div class='phone-icon'>
-                            {phone_icon}
-                        </div>
-                        <div class='phone'>
-                            {phone}
-                        </div>
-                        <div class='address-icon'>
-                            {address_icon}
-                        </div>
-                        <div class='address'>
-                            {address}, <br>
-                            {postal_code} {city}, {country_code}
+                        <div class='contact-info'>
+                            <div class='email-icon'>
+                                {email_icon}
+                            </div>
+                            <div class='email'>
+                                {email}
+                            </div>
+                            <div class='phone-icon'>
+                                {phone_icon}
+                            </div>
+                            <div class='phone'>
+                                {phone}
+                            </div>
+                            <div class='address-icon'>
+                                {address_icon}
+                            </div>
+                            <div class='address'>
+                                {address}, <br>
+                                {postal_code} {city}, {country_code}
+                            </div>
                         </div>
                     </div>
                 </div>
