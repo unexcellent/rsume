@@ -13,6 +13,12 @@ basics:
 education:
   - institution: Starfleet Academy
     startDate: Jan. 2252
-    endDate: Nov. 2252
+    endDate: Nov. 2254
     studyType: "Master"
     area: "Starship Operations"
+
+work:
+  - name: U.S.S Republic NCC-1371
+    description: Cadet with responsibilities including nuclear incident handling and adjusting promotion priorities.
+    startDate: Dec. 2252
+    endDate: Nov. 2254

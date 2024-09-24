@@ -5,6 +5,7 @@ use json_resume;
 pub struct SupportedResumeData {
     pub basics: Basics,
     pub education: Vec<Education>,
+    pub work: Vec<Work>,
 }
 impl SupportedResumeData {
     pub fn try_from(resume_data: json_resume::Resume) -> Result<Self, String> {
@@ -17,6 +18,11 @@ impl SupportedResumeData {
                 .education
                 .into_iter()
                 .map(|edu| Education::try_from(edu).unwrap())
+                .collect(),
+            work: resume_data
+                .work
+                .into_iter()
+                .map(|w| Work::try_from(w).unwrap())
                 .collect(),
         })
     }
@@ -78,6 +84,24 @@ impl Education {
             end_date: get_mandatory_field(education.end_date, "education.end_date")?,
             study_type: education.study_type,
             area: get_mandatory_field(education.area, "education.area")?,
+        })
+    }
+}
+
+#[derive(Clone, Debug)]
+pub struct Work {
+    pub name: String,
+    pub description: String,
+    pub start_date: String,
+    pub end_date: String,
+}
+impl Work {
+    pub fn try_from(work: json_resume::Work) -> Result<Self, String> {
+        Ok(Self {
+            name: get_mandatory_field(work.name, "education.institution")?,
+            description: get_mandatory_field(work.description, "education.institution")?,
+            start_date: get_mandatory_field(work.start_date, "education.start_date")?,
+            end_date: get_mandatory_field(work.end_date, "education.end_date")?,
         })
     }
 }

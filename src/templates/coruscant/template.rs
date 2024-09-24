@@ -2,7 +2,7 @@ use json_resume::Resume;
 
 use super::{
     basics::basics_box::BasicsBox, education::education_wrapper::EducationWrapper,
-    supported_resume_data::SupportedResumeData,
+    supported_resume_data::SupportedResumeData, work::work_wrapper::WorkWrapper,
 };
 
 #[allow(dead_code)]
@@ -23,6 +23,7 @@ impl Coruscant {
 
         let basics = BasicsBox::from(self.resume_data.clone()).build();
         let education = EducationWrapper::from(self.resume_data.clone()).build();
+        let work = WorkWrapper::from(self.resume_data.clone()).build();
 
         let html = format!(
             "
@@ -33,6 +34,7 @@ impl Coruscant {
     <body style='background-color: #F4F4F4;'>
         <div class='root'>
             {basics}
+            {work}
             {education}
         </div>
     </body>
