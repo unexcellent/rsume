@@ -10,15 +10,30 @@ basics:
     city: "Riverside"
     countryCode: "IA"
 
-education:
-  - institution: Starfleet Academy
-    startDate: Jan. 2252
-    endDate: Nov. 2254
-    studyType: "Master"
-    area: "Starship Operations"
-
 work:
+  - name: U.S.S Enterprise NCC-1701
+    description: Captain during historic five year mission with exploits still required at the accademy. Regarded as one of the finest officers in Starfleet.
+    startDate: Jul 2265
+    endDate: Now
+
+  - name: U.S.S Farragut NCC-1647
+    description: Lieutenant Commander and first officer.
+    startDate: Feb 2259
+    endDate: Jun 2265
+
+  - name: U.S.S Farragut NCC-1647
+    description: Junior Officer commanding planetary survey parteys and participating in the Klingon war with combat deployment.
+    startDate: Dec 2254
+    endDate: Jan 2259
+
   - name: U.S.S Republic NCC-1371
     description: Cadet with responsibilities including nuclear incident handling and adjusting promotion priorities.
-    startDate: Dec. 2252
-    endDate: Nov. 2254
+    startDate: Dec 2252
+    endDate: Nov 2254
+
+education:
+  - institution: Starfleet Academy
+    startDate: Jan 2252
+    endDate: Nov 2254
+    studyType: "Master"
+    area: "Starship Operations"

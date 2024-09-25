@@ -7,10 +7,17 @@
   font-size: 14pt;
 }
 
+@page {
+  margin-top: 3%; /* Default margin for all pages */
+}
+@page :first {
+  margin-top: 0; /* No margin for the first page */
+}
+
 .default-box {
   background-color: white;
   border-radius: 15pt;
-  box-shadow: 0 0 50pt rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 25pt rgba(0, 0, 0, 0.2);
   padding: 20pt;
 }
 
@@ -103,14 +110,19 @@
 }
 
 .entry {
+  padding-top: 16pt;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.entry-inner {
   display: grid;
   grid-template-columns: 1fr auto 82.5%;
   gap: 5pt;
-  margin-top: 8pt;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
 
   font-size: 12pt;
+  break-inside: avoid;
+  break-after: auto;
 }
 
 .timespan-column {
@@ -173,7 +185,7 @@
 
   background-color: white;
   border-radius: 15pt;
-  box-shadow: 0 0 50pt rgba(0, 0, 0, 0.3);
+  box-shadow: -5pt 0 20pt rgba(0, 0, 0, 0.1), 5pt 0 20pt rgba(0, 0, 0, 0.1);
   padding: 12pt;
 }
 

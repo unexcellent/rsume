@@ -10,10 +10,17 @@
   font-size: 14pt;
 }
 
+@page {
+  margin-top: 3%; /* Default margin for all pages */
+}
+@page :first {
+  margin-top: 0; /* No margin for the first page */
+}
+
 .default-box {
   background-color: white;
   border-radius: 15pt;
-  box-shadow: 0 0 50pt rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 25pt rgba(0, 0, 0, 0.2);
   padding: 20pt;
 }
 
@@ -106,14 +113,19 @@
 }
 
 .entry {
+  padding-top: 16pt;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.entry-inner {
   display: grid;
   grid-template-columns: 1fr auto 82.5%;
   gap: 5pt;
-  margin-top: 8pt;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
 
   font-size: 12pt;
+  break-inside: avoid;
+  break-after: auto;
 }
 
 .timespan-column {
@@ -176,7 +188,7 @@
 
   background-color: white;
   border-radius: 15pt;
-  box-shadow: 0 0 50pt rgba(0, 0, 0, 0.3);
+  box-shadow: -5pt 0 20pt rgba(0, 0, 0, 0.1), 5pt 0 20pt rgba(0, 0, 0, 0.1);
   padding: 12pt;
 }
 
@@ -187,7 +199,7 @@
   align-content: start;
 }</style>
     </head>
-    <body style='background-color: #F4F4F4;'>
+    <body>
         <div class='root'>
             
             <div class='basics-box'>
@@ -247,26 +259,106 @@
         </div>
         
             <div class='entry'>
-                <div class='timespan-column'>
-                    <div class='end-date'>
-                        Nov. 2254
+                <div class='entry-inner'>
+                    <div class='timespan-column'>
+                        <div class='end-date'>
+                            Now
+                        </div>
+                        <div class='start-date'>
+                            Jul 2265
+                        </div>
                     </div>
-                    <div class='start-date'>
-                        Dec. 2252
+                    <div class='timeline'>
+                        <div class='top-circle'></div>
+                        <div class='line'></div>
+                        <div class='bottom-circle'></div>
+                    </div>
+                    <div class='box-column'>
+                            <div class='entry-title'>
+                                U.S.S Enterprise NCC-1701
+                            </div>
+                            <div class='entry-body'>
+                                Captain during historic five year mission with exploits still required at the accademy. Regarded as one of the finest officers in Starfleet.
+                            </div>
                     </div>
                 </div>
-                <div class='timeline'>
-                    <div class='top-circle'></div>
-                    <div class='line'></div>
-                    <div class='bottom-circle'></div>
+            </div>
+        
+            <div class='entry'>
+                <div class='entry-inner'>
+                    <div class='timespan-column'>
+                        <div class='end-date'>
+                            Jun 2265
+                        </div>
+                        <div class='start-date'>
+                            Feb 2259
+                        </div>
+                    </div>
+                    <div class='timeline'>
+                        <div class='top-circle'></div>
+                        <div class='line'></div>
+                        <div class='bottom-circle'></div>
+                    </div>
+                    <div class='box-column'>
+                            <div class='entry-title'>
+                                U.S.S Farragut NCC-1647
+                            </div>
+                            <div class='entry-body'>
+                                Lieutenant Commander and first officer.
+                            </div>
+                    </div>
                 </div>
-                <div class='box-column'>
-                        <div class='entry-title'>
-                            U.S.S Republic NCC-1371
+            </div>
+        
+            <div class='entry'>
+                <div class='entry-inner'>
+                    <div class='timespan-column'>
+                        <div class='end-date'>
+                            Jan 2259
                         </div>
-                        <div class='entry-body'>
-                            Cadet with responsibilities including nuclear incident handling and adjusting promotion priorities.
+                        <div class='start-date'>
+                            Dec 2254
                         </div>
+                    </div>
+                    <div class='timeline'>
+                        <div class='top-circle'></div>
+                        <div class='line'></div>
+                        <div class='bottom-circle'></div>
+                    </div>
+                    <div class='box-column'>
+                            <div class='entry-title'>
+                                U.S.S Farragut NCC-1647
+                            </div>
+                            <div class='entry-body'>
+                                Junior Officer commanding planetary survey parteys and participating in the Klingon war with combat deployment.
+                            </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class='entry'>
+                <div class='entry-inner'>
+                    <div class='timespan-column'>
+                        <div class='end-date'>
+                            Nov 2254
+                        </div>
+                        <div class='start-date'>
+                            Dec 2252
+                        </div>
+                    </div>
+                    <div class='timeline'>
+                        <div class='top-circle'></div>
+                        <div class='line'></div>
+                        <div class='bottom-circle'></div>
+                    </div>
+                    <div class='box-column'>
+                            <div class='entry-title'>
+                                U.S.S Republic NCC-1371
+                            </div>
+                            <div class='entry-body'>
+                                Cadet with responsibilities including nuclear incident handling and adjusting promotion priorities.
+                            </div>
+                    </div>
                 </div>
             </div>
         
@@ -277,26 +369,28 @@
         </div>
         
             <div class='entry'>
-                <div class='timespan-column'>
-                    <div class='end-date'>
-                        Nov. 2254
-                    </div>
-                    <div class='start-date'>
-                        Jan. 2252
-                    </div>
-                </div>
-                <div class='timeline'>
-                    <div class='top-circle'></div>
-                    <div class='line'></div>
-                    <div class='bottom-circle'></div>
-                </div>
-                <div class='box-column'>
-                        <div class='entry-title'>
-                            Starfleet Academy
+                <div class='entry-inner'>
+                    <div class='timespan-column'>
+                        <div class='end-date'>
+                            Nov 2254
                         </div>
-                        <div class='entry-body'>
-                            Master in Starship Operations
+                        <div class='start-date'>
+                            Jan 2252
                         </div>
+                    </div>
+                    <div class='timeline'>
+                        <div class='top-circle'></div>
+                        <div class='line'></div>
+                        <div class='bottom-circle'></div>
+                    </div>
+                    <div class='box-column'>
+                            <div class='entry-title'>
+                                Starfleet Academy
+                            </div>
+                            <div class='entry-body'>
+                                Master in Starship Operations
+                            </div>
+                    </div>
                 </div>
             </div>
         
