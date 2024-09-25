@@ -8,10 +8,10 @@
 }
 
 @page {
-  margin-top: 3%; /* Default margin for all pages */
+  margin-top: 3%;
 }
 @page :first {
-  margin-top: 0; /* No margin for the first page */
+  margin-top: 0;
 }
 
 .default-box {
@@ -128,6 +128,7 @@
 .timespan-column {
   grid-column: 1;
   justify-self: right;
+  text-align: right;
   padding-top: 12pt;
   padding-bottom: 7pt;
 
@@ -152,8 +153,8 @@
 }
 
 .top-circle, .bottom-circle {
-  width: 7pt;
-  height: 7pt;
+  width: 8pt;
+  height: 8pt;
   background-color: black;
   border-radius: 50%;
 }
@@ -166,11 +167,11 @@
 .line {
   margin-top: 3pt;
   margin-bottom: 3pt;
-  margin-left: 2.5pt;
+  margin-left: 3.25pt;
 
   grid-row: 1/4;
   grid-column: 1;
-  width: 2pt;
+  width: 1.5pt;
   background-color: black;
 }
 
