@@ -134,19 +134,24 @@
   grid-column: 1;
   justify-self: right;
   text-align: right;
-  padding-top: 12pt;
-  padding-bottom: 7pt;
+  position: relative;
 
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  margin-top: 12pt;
+  margin-bottom: 12pt;
 }
 
 .end-date {
-  grid-row: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 75pt;
 }
 
 .start-date {
-  grid-row: 3;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-width: 75pt;
 }
 
 .timeline {
