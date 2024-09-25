@@ -125,6 +125,11 @@
   break-after: auto;
 }
 
+.entry-inner ul {
+  margin-top: 5pt;
+  margin-bottom: 0;
+}
+
 .timespan-column {
   grid-column: 1;
   justify-self: right;

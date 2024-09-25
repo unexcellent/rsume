@@ -12,9 +12,13 @@ basics:
 
 work:
   - name: U.S.S Enterprise NCC-1701
-    description: Captain during historic five year mission with exploits still required at the accademy. Regarded as one of the finest officers in Starfleet.
+    description: Commanding officer
     startDate: Jul 2265
     endDate: Now
+    highlights:
+      - Historic five year mission
+      - Discovery of replicalble means of time travel
+      - Conflicts with the Klingon and Romulan Empires
 
   - name: U.S.S Farragut NCC-1647
     description: Lieutenant Commander and first officer.
@@ -22,14 +26,20 @@ work:
     endDate: Jun 2265
 
   - name: U.S.S Farragut NCC-1647
-    description: Junior Officer commanding planetary survey parteys and participating in the Klingon war with combat deployment.
+    description: Junior Officer
     startDate: Dec 2254
     endDate: Jan 2259
+    highlights:
+      - Commanding planetary survey parties
+      - Participation in Klingon war
 
   - name: U.S.S Republic NCC-1371
-    description: Cadet with responsibilities including nuclear incident handling and adjusting promotion priorities.
+    description: Cadet
     startDate: Dec 2252
     endDate: Nov 2254
+    highlights:
+      - Nuclear incident handling
+      - Promotion priority adjustment
 
 education:
   - institution: Starfleet Academy
