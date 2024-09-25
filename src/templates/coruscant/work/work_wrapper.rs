@@ -1,6 +1,6 @@
 use crate::templates::coruscant::{
+    data_model::{supported_resume_data::SupportedResumeData, work::Work},
     shared::entry::Entry,
-    supported_resume_data::{SupportedResumeData, Work},
 };
 
 pub struct WorkWrapper {

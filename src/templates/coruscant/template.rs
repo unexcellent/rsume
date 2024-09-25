@@ -1,8 +1,8 @@
 use json_resume::Resume;
 
 use super::{
-    basics::basics_box::BasicsBox, education::education_wrapper::EducationWrapper,
-    supported_resume_data::SupportedResumeData, work::work_wrapper::WorkWrapper,
+    basics::basics_box::BasicsBox, data_model::supported_resume_data::SupportedResumeData,
+    education::education_wrapper::EducationWrapper, work::work_wrapper::WorkWrapper,
 };
 
 #[allow(dead_code)]

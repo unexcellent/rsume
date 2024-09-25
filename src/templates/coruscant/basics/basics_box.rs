@@ -1,4 +1,4 @@
-use crate::templates::coruscant::supported_resume_data::SupportedResumeData;
+use crate::templates::coruscant::data_model::supported_resume_data::SupportedResumeData;
 
 pub struct BasicsBox {
     resume_data: SupportedResumeData,

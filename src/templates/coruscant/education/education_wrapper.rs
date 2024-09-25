@@ -1,6 +1,6 @@
 use crate::templates::coruscant::{
+    data_model::{education::Education, supported_resume_data::SupportedResumeData},
     shared::entry::Entry,
-    supported_resume_data::{Education, SupportedResumeData},
 };
 
 pub struct EducationWrapper {
