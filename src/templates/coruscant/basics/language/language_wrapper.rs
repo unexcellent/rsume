@@ -46,7 +46,9 @@ fn build_entries(languages: &Vec<Language>) -> String {
                 <div class='language-fluency'>{language_fluency}</div>
             "
             )),
-            Err(_) => unimplemented!(),
+            Err(_) => html.push_str(&format!(
+                "<div class='language-name'>{language_name} ({language_fluency})</div>"
+            )),
         }
     }
 

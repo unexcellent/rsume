@@ -11,10 +11,10 @@ basics:
     countryCode: IA
 
 languages:
-  - language: EN
-    fluency: C2
-  - language: KL
-    fluency: A2
+  - language: English
+    fluency: Native
+  - language: Klingon
+    fluency: Beginner
 
 work:
   - name: U.S.S Enterprise NCC-1701
