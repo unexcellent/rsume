@@ -1,20 +1,26 @@
 basics:
   name: James T. Kirk
   label: Starfleet Captain
-  image: "kirk.jpg"
-  email: "kirk@starfleet.int"
-  phone: "1-919-271-0076"
+  image: kirk.jpg
+  email: kirk@starfleet.int
+  phone: 1-919-271-0076
   location:
-    address: "1234 Sunny Ave."
-    postalCode: "52327"
-    city: "Riverside"
-    countryCode: "IA"
+    address: 1234 Sunny Ave.
+    postalCode: 52327
+    city: Riverside
+    countryCode: IA
+
+languages:
+  - language: EN
+    fluency: C2
+  - language: KL
+    fluency: A2
 
 work:
   - name: U.S.S Enterprise NCC-1701
     description: Commanding officer
     startDate: Jul 2265
-    endDate: Now
+    endDate: Present
     highlights:
       - Historic five year mission
       - Discovery of replicalble means of time travel

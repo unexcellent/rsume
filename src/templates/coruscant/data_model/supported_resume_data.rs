@@ -1,7 +1,6 @@
 use super::{basics::Basics, education::Education, language::Language, work::Work};
 
 /// The template requires some fields in the resume data that are optional in json_resume. These structs simplify the generation process.
-#[allow(dead_code)]
 #[derive(Clone, Debug)]
 pub struct SupportedResumeData {
     pub basics: Basics,

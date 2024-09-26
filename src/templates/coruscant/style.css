@@ -109,6 +109,53 @@
   font-size: 18pt;
 }
 
+.skills-and-languages-wrapper {
+  margin-top: 25pt;
+  
+  display: grid;
+  grid-template-columns: 33% 66%;
+  
+  font-size: 12pt;
+}
+
+.languages-wrapper {
+  grid-column: 1;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 10pt;
+  row-gap: 15pt;
+  align-items: center;
+}
+
+.languages-title {
+  grid-row: 1;
+  grid-column: 1/3;
+}
+
+.language-name {
+  grid-column: 1;
+}
+
+.progress-bar {
+  grid-column: 2;
+
+  height: 5pt;
+  border-radius: 5pt;
+  background-color: #e0e0e0;
+}
+
+.progress {
+  height: 5pt;
+  background-color: black;
+  border-radius: 5pt;
+}
+
+.language-fluency {
+  grid-column: 3;
+}
+
+
 .entry {
   padding-top: 16pt;
   padding-left: 2.5%;
