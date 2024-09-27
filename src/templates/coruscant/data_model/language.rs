@@ -1,7 +1,9 @@
+use serde::Serialize;
+
 use super::utils::get_mandatory_field;
 
 #[allow(dead_code)]
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Serialize)]
 pub struct Language {
     pub language: String,
     pub fluency: String,

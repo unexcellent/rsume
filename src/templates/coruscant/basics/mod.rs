@@ -1,3 +1,4 @@
 pub mod basics_box;
-mod language;
+mod contact_info;
+mod languages;
 mod skills;

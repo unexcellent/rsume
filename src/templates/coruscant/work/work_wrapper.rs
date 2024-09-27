@@ -1,33 +1,24 @@
+use minijinja::context;
+
 use crate::templates::coruscant::{
     data_model::{supported_resume_data::SupportedResumeData, work::Work},
-    shared::entry::Entry,
+    shared::{entry::build_entry, render_template::render_template},
 };
 
-pub struct WorkWrapper {
-    resume_data: SupportedResumeData,
-}
-impl WorkWrapper {
-    pub fn from(resume_data: SupportedResumeData) -> Self {
-        Self { resume_data }
+/// Return the work wrapper as HTML.
+pub fn build_work_wrapper(resume_data: &SupportedResumeData) -> String {
+    if resume_data.work.is_empty() {
+        return String::new();
     }
 
-    pub fn build(&self) -> String {
-        if self.resume_data.work.is_empty() {
-            return String::new();
-        }
+    let rendered_template = render_template(
+        include_str!("index.html"),
+        context!(entries => build_entries(&resume_data.work)),
+    );
 
-        let entries = build_entries(&self.resume_data.work);
-
-        let html = format!(
-            "
-        <div class='section-title'>
-            Experience
-        </div>
-        {entries}
-        "
-        );
-
-        html
+    match rendered_template {
+        Ok(t) => t,
+        Err(_) => panic!("Failed to render work template."),
     }
 }
 
@@ -35,13 +26,12 @@ fn build_entries(work: &Vec<Work>) -> String {
     let mut entries_html = String::new();
 
     for work_entry in work {
-        let entry = Entry {
-            start_date: work_entry.start_date.clone(),
-            end_date: work_entry.end_date.clone(),
-            title: work_entry.name.clone(),
-            body: build_entry_body(work_entry),
-        };
-        entries_html.push_str(&entry.build());
+        entries_html.push_str(&build_entry(
+            work_entry.start_date.clone(),
+            work_entry.end_date.clone(),
+            work_entry.name.clone(),
+            build_entry_body(work_entry),
+        ));
     }
 
     entries_html

@@ -1,8 +1,11 @@
 use json_resume::Resume;
+use minijinja::context;
 
 use super::{
-    basics::basics_box::BasicsBox, data_model::supported_resume_data::SupportedResumeData,
-    education::education_wrapper::EducationWrapper, work::work_wrapper::WorkWrapper,
+    basics::basics_box::build_basics_wrapper,
+    data_model::supported_resume_data::SupportedResumeData,
+    education::education_wrapper::build_education_wrapper,
+    shared::render_template::render_template, work::work_wrapper::build_work_wrapper,
 };
 
 #[allow(dead_code)]
@@ -19,30 +22,20 @@ impl Coruscant {
 
     /// Build the resume as printable HTML.
     pub fn build(&self) -> String {
-        let style = include_str!("style.css");
-
-        let basics = BasicsBox::from(self.resume_data.clone()).build();
-        let education = EducationWrapper::from(self.resume_data.clone()).build();
-        let work = WorkWrapper::from(self.resume_data.clone()).build();
-
-        let html = format!(
-            "
-<html>
-    <head>
-        <style>{style}</style>
-    </head>
-    <body>
-        <div class='root'>
-            {basics}
-            {work}
-            {education}
-        </div>
-    </body>
-</html>
-        "
+        let rendered_template = render_template(
+            include_str!("index.html"),
+            context!(
+                style => include_str!("style.css"),
+                basics => build_basics_wrapper(&self.resume_data),
+                education => build_education_wrapper(&self.resume_data),
+                work => build_work_wrapper(&self.resume_data),
+            ),
         );
 
-        html
+        match rendered_template {
+            Ok(t) => t,
+            Err(_) => panic!("Failed to render root template."),
+        }
     }
 }
 
