@@ -1,7 +1,8 @@
 use json_resume::Resume;
 
 use super::{
-    basics::basics_box::BasicsBox, data_model::supported_resume_data::SupportedResumeData,
+    basics::basics_box::build_basics_wrapper,
+    data_model::supported_resume_data::SupportedResumeData,
     education::education_wrapper::EducationWrapper, work::work_wrapper::WorkWrapper,
 };
 
@@ -21,7 +22,7 @@ impl Coruscant {
     pub fn build(&self) -> String {
         let style = include_str!("style.css");
 
-        let basics = BasicsBox::from(self.resume_data.clone()).build();
+        let basics = build_basics_wrapper(&self.resume_data);
         let education = EducationWrapper::from(self.resume_data.clone()).build();
         let work = WorkWrapper::from(self.resume_data.clone()).build();
 
