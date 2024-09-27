@@ -19,4 +19,11 @@ impl SupportedLanguages {
             SupportedLanguages::DE => "Arbeitserfahrung".to_string(),
         }
     }
+
+    pub fn education_section_title(&self) -> String {
+        match self {
+            SupportedLanguages::EN => "Education".to_string(),
+            SupportedLanguages::DE => "Bildung".to_string(),
+        }
+    }
 }

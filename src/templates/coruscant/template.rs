@@ -31,7 +31,7 @@ impl Coruscant {
             context!(
                 style => include_str!("style.css"),
                 basics => build_basics_wrapper(&self.resume_data),
-                education => build_education_wrapper(&self.resume_data),
+                education => build_education_wrapper(&self.resume_data, &self.language),
                 work => build_work_wrapper(&self.resume_data, &self.language),
             ),
         );
