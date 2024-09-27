@@ -114,6 +114,7 @@
   
   display: grid;
   grid-template-columns: 33% 66%;
+  column-gap: 30pt;
   
   font-size: 12pt;
 }
@@ -126,6 +127,7 @@
   column-gap: 10pt;
   row-gap: 15pt;
   align-items: center;
+  height: fit-content;
 }
 
 .languages-title {
@@ -153,6 +155,29 @@
 
 .language-fluency {
   grid-column: 3;
+}
+
+.skills-wrapper {
+  grid-column: 2;
+}
+
+.skills-title {
+  width: 100%;
+  margin-bottom: 4pt;
+}
+
+.skill {
+  width: fit-content;
+  height: 20pt;
+  margin-top: 5.5pt;
+
+  padding-left: 10pt;
+  padding-right: 10pt;
+  padding-top: 4pt;
+
+  border-radius: 20pt;
+  background-color: #e0e0e0;
+  display: inline-block;
 }
 
 
