@@ -1,0 +1,44 @@
+basics:
+  name: James T. Kirk
+  label: Starfleet Captain
+  image: kirk.jpg
+  email: kirk@starfleet.int
+  phone: 1-919-271-0076
+  location:
+    address: 1234 Sunny Ave.
+    postalCode: 52327
+    city: Riverside
+    countryCode: IA
+
+languages:
+  - language: EN
+    fluency: C2
+  - language: DE
+    fluency: B1
+  - language: KL
+    fluency: A2
+
+skills:
+  - name: Raumschiffe Kommandieren
+  - name: Crewmitglieder Managen
+  - name: Interplanetäre Kriegsführung
+  - name: MS Excel
+  - name: Schießen
+  - name: Diplotie
+
+work:
+  - name: U.S.S Enterprise NCC-1701
+    description: Kapitän
+    startDate: Jul 2265
+    endDate: Fortlaufend
+    highlights:
+      - Historische 5 jährige Mission
+      - Entdeckung von Methoden fürs Zeitreisen
+      - Auseinandersetzungen mit den Klingonen und Romulanern
+
+education:
+  - institution: Starfleet Academie
+    startDate: Jan 2252
+    endDate: Nov 2254
+    studyType: Meister
+    area: Raumschiffsbetrieb
