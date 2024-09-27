@@ -1,6 +1,6 @@
 use crate::templates::coruscant::{
     data_model::{education::Education, supported_resume_data::SupportedResumeData},
-    shared::entry::Entry,
+    shared::entry::build_entry,
 };
 
 pub struct EducationWrapper {
@@ -35,13 +35,12 @@ fn build_entries(education: &Vec<Education>) -> String {
     let mut entries_html = String::new();
 
     for education_entry in education {
-        let entry = Entry {
-            start_date: education_entry.start_date.clone(),
-            end_date: education_entry.end_date.clone(),
-            title: education_entry.institution.clone(),
-            body: build_entry_body(education_entry),
-        };
-        entries_html.push_str(&entry.build());
+        entries_html.push_str(&build_entry(
+            education_entry.start_date.clone(),
+            education_entry.end_date.clone(),
+            education_entry.institution.clone(),
+            build_entry_body(education_entry),
+        ));
     }
 
     entries_html

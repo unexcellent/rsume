@@ -1,6 +1,6 @@
 use crate::templates::coruscant::{
     data_model::{supported_resume_data::SupportedResumeData, work::Work},
-    shared::entry::Entry,
+    shared::entry::build_entry,
 };
 
 pub struct WorkWrapper {
@@ -35,13 +35,12 @@ fn build_entries(work: &Vec<Work>) -> String {
     let mut entries_html = String::new();
 
     for work_entry in work {
-        let entry = Entry {
-            start_date: work_entry.start_date.clone(),
-            end_date: work_entry.end_date.clone(),
-            title: work_entry.name.clone(),
-            body: build_entry_body(work_entry),
-        };
-        entries_html.push_str(&entry.build());
+        entries_html.push_str(&build_entry(
+            work_entry.start_date.clone(),
+            work_entry.end_date.clone(),
+            work_entry.name.clone(),
+            build_entry_body(work_entry),
+        ));
     }
 
     entries_html

@@ -1,46 +1,21 @@
-pub struct Entry {
-    pub start_date: String,
-    pub end_date: String,
-    pub title: String,
-    pub body: String,
-}
-impl Entry {
-    pub fn build(&self) -> String {
-        let end_date = &self.end_date;
-        let start_date = &self.start_date;
-        let title = &self.title;
-        let body = &self.body;
+use minijinja::context;
 
-        let html = format!(
-            "
-            <div class='entry'>
-                <div class='entry-inner'>
-                    <div class='timespan-column'>
-                        <div class='end-date'>
-                            {end_date}
-                        </div>
-                        <div class='start-date'>
-                            {start_date}
-                        </div>
-                    </div>
-                    <div class='timeline'>
-                        <div class='top-circle'></div>
-                        <div class='line'></div>
-                        <div class='bottom-circle'></div>
-                    </div>
-                    <div class='box-column'>
-                            <div class='entry-title'>
-                                {title}
-                            </div>
-                            <div class='entry-body'>
-                                {body}
-                            </div>
-                    </div>
-                </div>
-            </div>
-        "
-        );
+use crate::templates::coruscant::shared::render_template::render_template;
 
-        html
+/// Return an entry as HTML. Entries are the box
+pub fn build_entry(start_date: String, end_date: String, title: String, body: String) -> String {
+    let rendered_template = render_template(
+        include_str!("index.html"),
+        context!(
+            start_date => start_date,
+            end_date => end_date,
+            title => title,
+            body => body,
+        ),
+    );
+
+    match rendered_template {
+        Ok(t) => t,
+        Err(_) => panic!("Failed to render contact info template."),
     }
 }
