@@ -1,8 +1,8 @@
 use std::path::PathBuf;
 
-use crate::load_json_resume::load_json_resume;
-use crate::resolve_image_path::resolve_image_path;
-use crate::save_to_pdf::save_to_pdf;
+use crate::io::load_json_resume::load_json_resume;
+use crate::io::resolve_image_path::resolve_image_path;
+use crate::io::save_to_pdf::save_to_pdf;
 use crate::templates::Coruscant;
 
 pub fn generate_pdf(resume_data_path: PathBuf, target_path: PathBuf) {

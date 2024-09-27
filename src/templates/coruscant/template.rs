@@ -43,7 +43,7 @@ impl Coruscant {
 pub mod tests {
     use std::{fs, path::PathBuf};
 
-    use crate::{generate_pdf, load_json_resume::load_json_resume, templates::Coruscant};
+    use crate::{generate_pdf, io::load_json_resume::load_json_resume, templates::Coruscant};
 
     #[test]
     fn build_example() {

@@ -1,7 +1,5 @@
 mod generate_pdf;
-mod load_json_resume;
-mod resolve_image_path;
-mod save_to_pdf;
+mod io;
 mod templates;
 
 use std::path::PathBuf;
