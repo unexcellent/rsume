@@ -9,6 +9,7 @@ use crate::io::resolve_image_path::resolve_image_path;
 use crate::io::save_to_pdf::save_to_pdf;
 use crate::templates::Coruscant;
 use clap::Parser;
+use templates::template::Template;
 
 /// Program for generating a resume from JSONResume data.
 #[derive(Parser, Debug)]
@@ -49,7 +50,7 @@ pub fn generate_pdf(
         basics.image = resolve_image_path(&resume_data_path, &basics.image);
     }
 
-    let template = Coruscant::try_from(resume_data, &language).unwrap();
+    let template = Coruscant::new(resume_data, &language).unwrap();
 
     let html_resume = template.build();
     save_to_pdf(html_resume, &target_path)?;

@@ -1,7 +1,7 @@
 use json_resume::Resume;
 use minijinja::context;
 
-use crate::Languages;
+use crate::{templates::template::Template, Languages};
 
 use super::{
     basics::basics_box::build_basics_wrapper,
@@ -16,8 +16,8 @@ pub struct Coruscant {
     resume_data: SupportedResumeData,
     language: SupportedLanguages,
 }
-impl Coruscant {
-    pub fn try_from(json_resume_data: Resume, language: &Languages) -> Result<Self, String> {
+impl Template for Coruscant {
+    fn new(json_resume_data: Resume, language: &Languages) -> Result<Self, String> {
         Ok(Coruscant {
             resume_data: SupportedResumeData::try_from(json_resume_data)?,
             language: SupportedLanguages::try_from(language)?,
@@ -25,7 +25,7 @@ impl Coruscant {
     }
 
     /// Build the resume as printable HTML.
-    pub fn build(&self) -> String {
+    fn build(&self) -> String {
         let rendered_template = render_template(
             include_str!("index.html"),
             context!(
@@ -55,10 +55,9 @@ pub mod tests {
         language: &Languages,
         html_path: &PathBuf,
     ) -> bool {
-        let generated_html =
-            Coruscant::try_from(load_json_resume(resume_data_path).unwrap(), language)
-                .unwrap()
-                .build();
+        let generated_html = Coruscant::new(load_json_resume(resume_data_path).unwrap(), language)
+            .unwrap()
+            .build();
 
         let previous_html = fs::read_to_string(html_path);
 
