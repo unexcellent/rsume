@@ -1,6 +1,9 @@
-use minijinja::{context, Environment};
+use minijinja::context;
 
-use crate::templates::coruscant::data_model::supported_resume_data::SupportedResumeData;
+use crate::templates::coruscant::{
+    data_model::supported_resume_data::SupportedResumeData,
+    shared::render_template::render_template,
+};
 
 /// Return the skills wrapper as HTML.
 pub fn build_skills_wrapper(resume_data: &SupportedResumeData) -> String {
@@ -8,14 +11,13 @@ pub fn build_skills_wrapper(resume_data: &SupportedResumeData) -> String {
         return String::new();
     }
 
-    let mut environment = Environment::new();
-    environment
-        .add_template("skills", include_str!("index.html"))
-        .unwrap();
+    let rendered_template = render_template(
+        include_str!("index.html"),
+        context!(skills => resume_data.skills),
+    );
 
-    let template = environment.get_template("skills").unwrap();
-
-    template
-        .render(context!(skills => resume_data.skills))
-        .unwrap()
+    match rendered_template {
+        Ok(t) => t,
+        Err(_) => panic!("Failed to render skills template."),
+    }
 }
