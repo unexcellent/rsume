@@ -24,7 +24,7 @@ pub fn build_basics_wrapper(
             label => resume_data.basics.label,
             contact_info => build_contact_info_wrapper(resume_data),
             languages => build_languages_wrapper(resume_data, language),
-            skills => build_skills_wrapper(resume_data),
+            skills => build_skills_wrapper(resume_data, language),
         ),
     );
 

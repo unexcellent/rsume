@@ -30,7 +30,14 @@ impl SupportedLanguages {
     pub fn languages_section_title(&self) -> String {
         match self {
             SupportedLanguages::EN => "Languages".to_string(),
-            SupportedLanguages::DE => "Sprachkenntnisse".to_string(),
+            SupportedLanguages::DE => "Sprachen".to_string(),
+        }
+    }
+
+    pub fn skills_section_title(&self) -> String {
+        match self {
+            SupportedLanguages::EN => "Skills".to_string(),
+            SupportedLanguages::DE => "Kenntnisse".to_string(),
         }
     }
 }
