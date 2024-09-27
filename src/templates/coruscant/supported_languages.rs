@@ -26,4 +26,11 @@ impl SupportedLanguages {
             SupportedLanguages::DE => "Bildung".to_string(),
         }
     }
+
+    pub fn languages_section_title(&self) -> String {
+        match self {
+            SupportedLanguages::EN => "Languages".to_string(),
+            SupportedLanguages::DE => "Sprachkenntnisse".to_string(),
+        }
+    }
 }

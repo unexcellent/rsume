@@ -30,7 +30,7 @@ impl Coruscant {
             include_str!("index.html"),
             context!(
                 style => include_str!("style.css"),
-                basics => build_basics_wrapper(&self.resume_data),
+                basics => build_basics_wrapper(&self.resume_data, &self.language),
                 education => build_education_wrapper(&self.resume_data, &self.language),
                 work => build_work_wrapper(&self.resume_data, &self.language),
             ),

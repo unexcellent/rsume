@@ -8,10 +8,14 @@ use crate::templates::coruscant::{
     },
     data_model::supported_resume_data::SupportedResumeData,
     shared::render_template::render_template,
+    supported_languages::SupportedLanguages,
 };
 
 /// Return the basics wrapper as HTML.
-pub fn build_basics_wrapper(resume_data: &SupportedResumeData) -> String {
+pub fn build_basics_wrapper(
+    resume_data: &SupportedResumeData,
+    language: &SupportedLanguages,
+) -> String {
     let rendered_template = render_template(
         include_str!("index.html"),
         context!(
@@ -19,7 +23,7 @@ pub fn build_basics_wrapper(resume_data: &SupportedResumeData) -> String {
             image => resume_data.basics.image,
             label => resume_data.basics.label,
             contact_info => build_contact_info_wrapper(resume_data),
-            languages => build_languages_wrapper(resume_data),
+            languages => build_languages_wrapper(resume_data, language),
             skills => build_skills_wrapper(resume_data),
         ),
     );
