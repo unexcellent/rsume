@@ -39,4 +39,4 @@ Cargo.lock
 .vscode/*
 
 # Sandbox directory for all files that should stay private
-sandbox
+playground/

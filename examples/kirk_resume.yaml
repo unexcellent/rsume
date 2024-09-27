@@ -1,0 +1,63 @@
+basics:
+  name: James T. Kirk
+  label: Starfleet Captain
+  image: kirk.jpg
+  email: kirk@starfleet.int
+  phone: 1-919-271-0076
+  location:
+    address: 1234 Sunny Ave.
+    postalCode: 52327
+    city: Riverside
+    countryCode: IA
+
+languages:
+  - language: EN
+    fluency: C2
+  - language: KL
+    fluency: A2
+
+skills:
+  - name: Commanding Starfleet Ships
+  - name: Managing Crew
+  - name: Interplanetary Tactical Warfare
+  - name: MS Excel
+  - name: Shooting
+  - name: Diplomacy
+
+work:
+  - name: U.S.S Enterprise NCC-1701
+    description: Commanding officer
+    startDate: Jul 2265
+    endDate: Present
+    highlights:
+      - Historic five year mission
+      - Discovery of replicalble means of time travel
+      - Conflicts with the Klingon and Romulan Empires
+
+  - name: U.S.S Farragut NCC-1647
+    description: Lieutenant Commander and first officer.
+    startDate: Feb 2259
+    endDate: Jun 2265
+
+  - name: U.S.S Farragut NCC-1647
+    description: Junior Officer
+    startDate: Dec 2254
+    endDate: Jan 2259
+    highlights:
+      - Commanding planetary survey parties
+      - Participation in Klingon war
+
+  - name: U.S.S Republic NCC-1371
+    description: Cadet
+    startDate: Dec 2252
+    endDate: Nov 2254
+    highlights:
+      - Nuclear incident handling
+      - Promotion priority adjustment
+
+education:
+  - institution: Starfleet Academy
+    startDate: Jan 2252
+    endDate: Nov 2254
+    studyType: "Master"
+    area: "Starship Operations"
