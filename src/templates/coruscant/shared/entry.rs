@@ -2,7 +2,7 @@ use minijinja::context;
 
 use crate::templates::coruscant::shared::render_template::render_template;
 
-/// Return an entry as HTML. Entries are the box
+/// Return an entry as HTML. Entries are the boxes that appear in sections like work or education.
 pub fn build_entry(start_date: String, end_date: String, title: String, body: String) -> String {
     let rendered_template = render_template(
         include_str!("index.html"),
@@ -16,6 +16,6 @@ pub fn build_entry(start_date: String, end_date: String, title: String, body: St
 
     match rendered_template {
         Ok(t) => t,
-        Err(_) => panic!("Failed to render contact info template."),
+        Err(_) => panic!("Failed to render entry template."),
     }
 }
