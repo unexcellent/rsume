@@ -1,6 +1,7 @@
 use crate::templates::coruscant::data_model::supported_resume_data::SupportedResumeData;
 
 use super::{
+    contact_info::contact_info_wrapper::build_contact_info_wrapper,
     languages::language_wrapper::build_languages_wrapper,
     skills::skills_wrapper::build_skills_wrapper,
 };
@@ -17,18 +18,9 @@ impl BasicsBox {
         let name = &self.resume_data.basics.name;
         let image = &self.resume_data.basics.image;
         let label = &self.resume_data.basics.label;
-        let email = &self.resume_data.basics.email;
-        let phone = &self.resume_data.basics.phone;
-        let address = &self.resume_data.basics.location.address;
-        let city = &self.resume_data.basics.location.city;
-        let postal_code = &self.resume_data.basics.location.postal_code;
-        let country_code = &self.resume_data.basics.location.country_code;
+        let contact_info = build_contact_info_wrapper(&self.resume_data);
         let languages = build_languages_wrapper(&self.resume_data);
         let skills = build_skills_wrapper(&self.resume_data);
-
-        let email_icon = include_str!("icons/email.svg");
-        let phone_icon = include_str!("icons/phone.svg");
-        let address_icon = include_str!("icons/address.svg");
 
         let html = format!(
             "
@@ -46,27 +38,7 @@ impl BasicsBox {
                                 {label}
                             </div>
                         </div>
-                        <div class='contact-info'>
-                            <div class='email-icon'>
-                                {email_icon}
-                            </div>
-                            <div class='email'>
-                                {email}
-                            </div>
-                            <div class='phone-icon'>
-                                {phone_icon}
-                            </div>
-                            <div class='phone'>
-                                {phone}
-                            </div>
-                            <div class='address-icon'>
-                                {address_icon}
-                            </div>
-                            <div class='address'>
-                                {address}, <br>
-                                {postal_code} {city}, {country_code}
-                            </div>
-                        </div>
+                        {contact_info}
                     </div>
                     <div class='skills-and-languages-wrapper'>
                         {languages}
