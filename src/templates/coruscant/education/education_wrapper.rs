@@ -1,33 +1,24 @@
+use minijinja::context;
+
 use crate::templates::coruscant::{
     data_model::{education::Education, supported_resume_data::SupportedResumeData},
-    shared::entry::build_entry,
+    shared::{entry::build_entry, render_template::render_template},
 };
 
-pub struct EducationWrapper {
-    resume_data: SupportedResumeData,
-}
-impl EducationWrapper {
-    pub fn from(resume_data: SupportedResumeData) -> Self {
-        Self { resume_data }
+/// Return the education wrapper as HTML.
+pub fn build_education_wrapper(resume_data: &SupportedResumeData) -> String {
+    if resume_data.education.is_empty() {
+        return String::new();
     }
 
-    pub fn build(&self) -> String {
-        if self.resume_data.education.is_empty() {
-            return String::new();
-        }
+    let rendered_template = render_template(
+        include_str!("index.html"),
+        context!(entries => build_entries(&resume_data.education)),
+    );
 
-        let entries = build_entries(&self.resume_data.education);
-
-        let html = format!(
-            "
-        <div class='section-title'>
-            Education
-        </div>
-        {entries}
-        "
-        );
-
-        html
+    match rendered_template {
+        Ok(t) => t,
+        Err(_) => panic!("Failed to render work template."),
     }
 }
 
