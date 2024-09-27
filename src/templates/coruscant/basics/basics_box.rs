@@ -1,7 +1,8 @@
 use crate::templates::coruscant::data_model::supported_resume_data::SupportedResumeData;
 
 use super::{
-    language::language_wrapper::LanguageWrapper, skills::skills_wrapper::build_skills_wrapper,
+    languages::language_wrapper::build_languages_wrapper,
+    skills::skills_wrapper::build_skills_wrapper,
 };
 
 pub struct BasicsBox {
@@ -22,7 +23,7 @@ impl BasicsBox {
         let city = &self.resume_data.basics.location.city;
         let postal_code = &self.resume_data.basics.location.postal_code;
         let country_code = &self.resume_data.basics.location.country_code;
-        let languages = LanguageWrapper::from(self.resume_data.clone()).build();
+        let languages = build_languages_wrapper(&self.resume_data);
         let skills = build_skills_wrapper(&self.resume_data);
 
         let email_icon = include_str!("icons/email.svg");
@@ -68,9 +69,7 @@ impl BasicsBox {
                         </div>
                     </div>
                     <div class='skills-and-languages-wrapper'>
-                        <div class='languages-wrapper'>
-                            {languages}
-                        </div>
+                        {languages}
                         {skills}
                     </div>
                 </div>

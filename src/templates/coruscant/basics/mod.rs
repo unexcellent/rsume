@@ -1,3 +1,3 @@
 pub mod basics_box;
-mod language;
+mod languages;
 mod skills;

@@ -1,0 +1,13 @@
+<div class='languages-wrapper'>
+    <div class='languages-title'> Languages </div>
+
+    {% for language in languages %}
+        <div class='language-name'>{{language.language}}</div>
+        <div class='progress-bar'>
+            <div class='progress' style='width: {{percentages[loop.index0]}}%;'></div>
+        </div>
+            <div class='language-fluency'>
+                {{language.fluency}}
+        </div>
+    {% endfor %}
+</div>
