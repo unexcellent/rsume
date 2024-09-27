@@ -12,4 +12,11 @@ impl SupportedLanguages {
             Languages::DE => Ok(Self::DE),
         }
     }
+
+    pub fn work_section_title(&self) -> String {
+        match self {
+            SupportedLanguages::EN => "Experience".to_string(),
+            SupportedLanguages::DE => "Arbeitserfahrung".to_string(),
+        }
+    }
 }
