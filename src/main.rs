@@ -73,9 +73,11 @@ pub fn generate_pdf(
 
 /// All templates that are available.
 pub enum AvailableTemplates {
+    /// A modern, minimalist, and professional resume design.
     Coruscant,
 }
 impl AvailableTemplates {
+    /// Try constructing a this struct from a string.
     pub fn try_from(template_string: String) -> Result<Self, String> {
         match template_string.to_lowercase().as_str() {
             "coruscant" => Ok(AvailableTemplates::Coruscant),
@@ -92,6 +94,7 @@ pub enum GloballySupportedLanguages {
     DE,
 }
 impl GloballySupportedLanguages {
+    /// Try constructing a this struct from a string.
     pub fn try_from(language_string: String) -> Result<Self, String> {
         match language_string.to_lowercase().as_str() {
             "english" | "en" => Ok(GloballySupportedLanguages::EN),

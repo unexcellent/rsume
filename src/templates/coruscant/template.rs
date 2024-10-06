@@ -11,8 +11,11 @@ use super::{
     work::work_wrapper::build_work_wrapper,
 };
 
+/// A modern, minimalist, and professional resume design.
 pub struct Coruscant {
+    /// Underlying personal data defining the content of the resume (like education, work experience, ...).
     resume_data: SupportedResumeData,
+    /// Language used in the section headers of the resume.
     language: SupportedLanguages,
 }
 impl Template for Coruscant {
@@ -26,7 +29,6 @@ impl Template for Coruscant {
         })
     }
 
-    /// Build the resume as printable HTML.
     fn build(&self) -> String {
         let rendered_template = render_template(
             include_str!("index.html"),

@@ -1,5 +1,6 @@
 use std::{error::Error, fs, path::PathBuf};
 
+/// Try to load the contents of a JSONResume file into a struct. The file can either be of type .json or .yaml.
 pub fn load_json_resume(path: &PathBuf) -> Result<json_resume::Resume, Box<dyn Error>> {
     let contents = fs::read_to_string(path)?;
     let resume_data = match path.extension().unwrap().to_str() {
