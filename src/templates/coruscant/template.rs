@@ -11,7 +11,6 @@ use super::{
     work::work_wrapper::build_work_wrapper,
 };
 
-#[allow(dead_code)]
 pub struct Coruscant {
     resume_data: SupportedResumeData,
     language: SupportedLanguages,

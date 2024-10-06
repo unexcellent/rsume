@@ -22,9 +22,11 @@ pub struct Args {
     target_path: PathBuf,
 
     /// Template that should be used. Currently, the only available option is 'coruscant'. Default is 'coruscant'.
+    #[arg(short, long)]
     template: Option<String>,
 
     /// Language of the template. Available options are 'english' and 'deutsch'. Default is english.
+    #[arg(short, long)]
     language: Option<String>,
 }
 
