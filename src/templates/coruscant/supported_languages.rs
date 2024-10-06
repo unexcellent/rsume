@@ -1,4 +1,4 @@
-use crate::Languages;
+use crate::GloballySupportedLanguages;
 
 /// Languages supported by this template.
 pub enum SupportedLanguages {
@@ -6,10 +6,10 @@ pub enum SupportedLanguages {
     DE,
 }
 impl SupportedLanguages {
-    pub fn try_from(language: &Languages) -> Result<Self, String> {
+    pub fn try_from(language: &GloballySupportedLanguages) -> Result<Self, String> {
         match language {
-            Languages::EN => Ok(Self::EN),
-            Languages::DE => Ok(Self::DE),
+            GloballySupportedLanguages::EN => Ok(Self::EN),
+            GloballySupportedLanguages::DE => Ok(Self::DE),
         }
     }
 

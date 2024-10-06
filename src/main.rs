@@ -29,8 +29,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     let args = Args::parse();
 
     let language = match args.language {
-        Some(language_string) => Languages::try_from(language_string)?,
-        None => Languages::EN,
+        Some(language_string) => GloballySupportedLanguages::try_from(language_string)?,
+        None => GloballySupportedLanguages::EN,
     };
 
     generate_pdf(args.resume_data_path, args.target_path, language)?;
@@ -42,7 +42,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 pub fn generate_pdf(
     resume_data_path: PathBuf,
     target_path: PathBuf,
-    language: Languages,
+    language: GloballySupportedLanguages,
 ) -> Result<(), Box<dyn Error>> {
     let mut resume_data = load_json_resume(&resume_data_path).unwrap();
 
@@ -58,18 +58,18 @@ pub fn generate_pdf(
     Ok(())
 }
 
-/// Language of the template
-pub enum Languages {
+/// Language in which the resume should be generated in.
+pub enum GloballySupportedLanguages {
     /// English
     EN,
     /// German
     DE,
 }
-impl Languages {
+impl GloballySupportedLanguages {
     pub fn try_from(language_string: String) -> Result<Self, String> {
         match language_string.to_lowercase().as_str() {
-            "english" | "en" => Ok(Languages::EN),
-            "deutsch" | "german" | "de" => Ok(Languages::DE),
+            "english" | "en" => Ok(GloballySupportedLanguages::EN),
+            "deutsch" | "german" | "de" => Ok(GloballySupportedLanguages::DE),
             _ => Err(format!("{language_string} is not a supported language.")),
         }
     }

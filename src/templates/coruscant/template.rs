@@ -1,7 +1,7 @@
 use json_resume::Resume;
 use minijinja::context;
 
-use crate::{templates::template::Template, Languages};
+use crate::{templates::template::Template, GloballySupportedLanguages};
 
 use super::{
     basics::basics_box::build_basics_wrapper,
@@ -17,7 +17,10 @@ pub struct Coruscant {
     language: SupportedLanguages,
 }
 impl Template for Coruscant {
-    fn new(json_resume_data: Resume, language: &Languages) -> Result<Self, String> {
+    fn new(
+        json_resume_data: Resume,
+        language: &GloballySupportedLanguages,
+    ) -> Result<Self, String> {
         Ok(Coruscant {
             resume_data: SupportedResumeData::try_from(json_resume_data)?,
             language: SupportedLanguages::try_from(language)?,
@@ -52,7 +55,7 @@ pub mod tests {
 
     fn html_is_different(
         resume_data_path: &PathBuf,
-        language: &Languages,
+        language: &GloballySupportedLanguages,
         html_path: &PathBuf,
     ) -> bool {
         let generated_html = Coruscant::new(load_json_resume(resume_data_path).unwrap(), language)
@@ -74,7 +77,7 @@ pub mod tests {
         let resume_data_path = PathBuf::from("examples/kirk_resume_en.yaml");
         let target_path = PathBuf::from("examples/coruscant_en.pdf");
         let html_path = resume_data_path.parent().unwrap().join("coruscant_en.html");
-        let language = Languages::EN;
+        let language = GloballySupportedLanguages::EN;
 
         if !html_is_different(&resume_data_path, &language, &html_path) {
             return;
@@ -92,7 +95,7 @@ pub mod tests {
         let resume_data_path = PathBuf::from("examples/kirk_resume_de.yaml");
         let target_path = PathBuf::from("examples/coruscant_de.pdf");
         let html_path = resume_data_path.parent().unwrap().join("coruscant_de.html");
-        let language = Languages::DE;
+        let language = GloballySupportedLanguages::DE;
 
         if !html_is_different(&resume_data_path, &language, &html_path) {
             return;
