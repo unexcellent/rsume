@@ -21,6 +21,9 @@ pub struct Args {
     /// Location where the generated PDF should be stored.
     target_path: PathBuf,
 
+    /// Template that should be used. Currently, the only available option is 'coruscant'. Default is 'coruscant'.
+    template: Option<String>,
+
     /// Language of the template. Available options are 'english' and 'deutsch'. Default is english.
     language: Option<String>,
 }
@@ -33,7 +36,12 @@ fn main() -> Result<(), Box<dyn Error>> {
         None => GloballySupportedLanguages::EN,
     };
 
-    generate_pdf(args.resume_data_path, args.target_path, language)?;
+    let template = match args.template {
+        Some(template_string) => AvailableTemplates::try_from(template_string)?,
+        None => AvailableTemplates::Coruscant,
+    };
+
+    generate_pdf(args.resume_data_path, args.target_path, template, language)?;
 
     Ok(())
 }
@@ -42,6 +50,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 pub fn generate_pdf(
     resume_data_path: PathBuf,
     target_path: PathBuf,
+    template_enum: AvailableTemplates,
     language: GloballySupportedLanguages,
 ) -> Result<(), Box<dyn Error>> {
     let mut resume_data = load_json_resume(&resume_data_path).unwrap();
@@ -50,12 +59,27 @@ pub fn generate_pdf(
         basics.image = resolve_image_path(&resume_data_path, &basics.image);
     }
 
-    let template = Coruscant::new(resume_data, &language).unwrap();
+    let template = match template_enum {
+        AvailableTemplates::Coruscant => Coruscant::new(resume_data, &language).unwrap(),
+    };
 
     let html_resume = template.build();
     save_to_pdf(html_resume, &target_path)?;
 
     Ok(())
+}
+
+/// All templates that are available.
+pub enum AvailableTemplates {
+    Coruscant,
+}
+impl AvailableTemplates {
+    pub fn try_from(template_string: String) -> Result<Self, String> {
+        match template_string.to_lowercase().as_str() {
+            "coruscant" => Ok(AvailableTemplates::Coruscant),
+            _ => Err(format!("{template_string} is not a supported template.")),
+        }
+    }
 }
 
 /// Language in which the resume should be generated in.

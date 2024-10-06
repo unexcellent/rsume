@@ -77,6 +77,7 @@ pub mod tests {
         let resume_data_path = PathBuf::from("examples/kirk_resume_en.yaml");
         let target_path = PathBuf::from("examples/coruscant_en.pdf");
         let html_path = resume_data_path.parent().unwrap().join("coruscant_en.html");
+        let template_enum = crate::AvailableTemplates::Coruscant;
         let language = GloballySupportedLanguages::EN;
 
         if !html_is_different(&resume_data_path, &language, &html_path) {
@@ -86,7 +87,13 @@ pub mod tests {
         let _ = fs::remove_file(&target_path);
         assert!(!target_path.is_file());
 
-        generate_pdf(resume_data_path, target_path.clone(), language).unwrap();
+        generate_pdf(
+            resume_data_path,
+            target_path.clone(),
+            template_enum,
+            language,
+        )
+        .unwrap();
         assert!(target_path.is_file());
     }
 
@@ -95,6 +102,7 @@ pub mod tests {
         let resume_data_path = PathBuf::from("examples/kirk_resume_de.yaml");
         let target_path = PathBuf::from("examples/coruscant_de.pdf");
         let html_path = resume_data_path.parent().unwrap().join("coruscant_de.html");
+        let template_enum = crate::AvailableTemplates::Coruscant;
         let language = GloballySupportedLanguages::DE;
 
         if !html_is_different(&resume_data_path, &language, &html_path) {
@@ -104,7 +112,13 @@ pub mod tests {
         let _ = fs::remove_file(&target_path);
         assert!(!target_path.is_file());
 
-        generate_pdf(resume_data_path, target_path.clone(), language).unwrap();
+        generate_pdf(
+            resume_data_path,
+            target_path.clone(),
+            template_enum,
+            language,
+        )
+        .unwrap();
         assert!(target_path.is_file());
     }
 }
