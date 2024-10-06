@@ -16,7 +16,7 @@ rsume /path/to/resume_data.yaml /target/path.pdf --template "coruscant" --langua
 ```
 The `--template` and `--language` options are optional.
 
-The resume data should follow the [JSONResume](https://jsonresume.org/) schema and can either be stored as a `.json` or `.yaml` file.
+The resume data should follow the [JSONResume](https://jsonresume.org/) schema and can either be stored as a `.json` or `.yaml` file. Look at [examples/kirk_resume_en.yaml](https://github.com/unexcellent/rsume/blob/main/examples/kirk_resume_en.yaml).
 
 ## Known Issues
 Currently, only a single template is available. In the future more template are planned.
