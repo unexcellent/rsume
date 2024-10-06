@@ -3,17 +3,21 @@ use minijinja::context;
 use crate::templates::coruscant::{
     data_model::{education::Education, supported_resume_data::SupportedResumeData},
     shared::{entry::build_entry, render_template::render_template},
+    supported_languages::SupportedLanguages,
 };
 
 /// Return the education wrapper as HTML.
-pub fn build_education_wrapper(resume_data: &SupportedResumeData) -> String {
+pub fn build_education_wrapper(
+    resume_data: &SupportedResumeData,
+    language: &SupportedLanguages,
+) -> String {
     if resume_data.education.is_empty() {
         return String::new();
     }
 
     let rendered_template = render_template(
         include_str!("index.html"),
-        context!(entries => build_entries(&resume_data.education)),
+        context!(entries => build_entries(&resume_data.education), title => language.education_section_title()),
     );
 
     match rendered_template {

@@ -2,11 +2,14 @@ use minijinja::context;
 
 use crate::templates::coruscant::{
     data_model::supported_resume_data::SupportedResumeData,
-    shared::render_template::render_template,
+    shared::render_template::render_template, supported_languages::SupportedLanguages,
 };
 
 /// Return the languages wrapper as HTML.
-pub fn build_languages_wrapper(resume_data: &SupportedResumeData) -> String {
+pub fn build_languages_wrapper(
+    resume_data: &SupportedResumeData,
+    language: &SupportedLanguages,
+) -> String {
     if resume_data.languages.is_empty() {
         return String::new();
     }
@@ -20,8 +23,9 @@ pub fn build_languages_wrapper(resume_data: &SupportedResumeData) -> String {
     let rendered_template = render_template(
         include_str!("index.html"),
         context!(
+            title => language.languages_section_title(),
             languages => resume_data.languages,
-            percentages => percentages
+            percentages => percentages,
         ),
     );
 
