@@ -21,5 +21,4 @@ The resume data should follow the [JSONResume](https://jsonresume.org/) schema a
 ## Known Issues
 Currently, only a single template is available. In the future more template are planned.
 - If the content of the resume is short enough that only one page is filled, an empty second page is generated regardless
-- The box shadows in the coruscant template look as intended when viewed on all chromium-based browsers and Adobe Acrobat but too dark in Firefox and Preview
 - Page breaks in the coruscant template may separate the section title (like "Education") from the first entry
