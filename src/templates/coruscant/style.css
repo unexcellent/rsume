@@ -247,6 +247,7 @@
   height: 8pt;
   background-color: black;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .top-circle {
@@ -263,6 +264,7 @@
   grid-column: 1;
   width: 1.5pt;
   background-color: black;
+  z-index: 1;
 }
 
 .bottom-circle {
