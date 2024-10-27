@@ -4,6 +4,9 @@
             <div class='end-date'>
                 {{end_date}}
             </div>
+            <div class='singular-date'>
+                {{date}}
+            </div>
             <div class='start-date'>
                 {{start_date}}
             </div>
@@ -14,12 +17,17 @@
             <div class='bottom-circle'></div>
         </div>
         <div class='box-column'>
-                <div class='entry-title'>
-                    {{title}}
+            <div class='entry-title'>
+                {{title}}
+            </div>
+            <div class='entry-body'>
+                {{body}}
+            </div>
+            {% if (footer is defined) and (footer != none) %}
+                <div class='entry-footer'>
+                    {{footer}}
                 </div>
-                <div class='entry-body'>
-                    {{body}}
-                </div>
+            {% endif %}
         </div>
     </div>
 </div>

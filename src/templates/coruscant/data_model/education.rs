@@ -7,6 +7,7 @@ pub struct Education {
     pub end_date: String,
     pub study_type: Option<String>,
     pub area: String,
+    pub score: Option<String>,
 }
 impl Education {
     pub fn try_from(education: json_resume::Education) -> Result<Self, String> {
@@ -16,6 +17,7 @@ impl Education {
             end_date: get_mandatory_field(education.end_date, "education.end_date")?,
             study_type: education.study_type,
             area: get_mandatory_field(education.area, "education.area")?,
+            score: education.score,
         })
     }
 }

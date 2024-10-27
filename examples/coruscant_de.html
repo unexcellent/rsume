@@ -221,6 +221,14 @@
   min-width: 75pt;
 }
 
+.singular-date {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  min-width: 75pt;
+}
+
 .start-date {
   position: absolute;
   bottom: 0;
@@ -241,6 +249,7 @@
   height: 8pt;
   background-color: black;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .top-circle {
@@ -257,6 +266,7 @@
   grid-column: 1;
   width: 1.5pt;
   background-color: black;
+  z-index: 1;
 }
 
 .bottom-circle {
@@ -279,6 +289,10 @@
 
   margin-bottom: 10pt;
   align-content: start;
+}
+
+.entry-footer {
+  margin-top: 10pt;
 }</style>
     </head>
     <body>
@@ -389,6 +403,9 @@
             <div class='end-date'>
                 Fortlaufend
             </div>
+            <div class='singular-date'>
+                
+            </div>
             <div class='start-date'>
                 Jul 2265
             </div>
@@ -399,11 +416,11 @@
             <div class='bottom-circle'></div>
         </div>
         <div class='box-column'>
-                <div class='entry-title'>
-                    U.S.S Enterprise NCC-1701
-                </div>
-                <div class='entry-body'>
-                    Kapitän
+            <div class='entry-title'>
+                U.S.S Enterprise NCC-1701
+            </div>
+            <div class='entry-body'>
+                Kapitän
 <ul>
             
 <li>Historische 5 jährige Mission</li>
@@ -415,7 +432,8 @@
 <li>Auseinandersetzungen mit den Klingonen und Romulanern</li>
             
 </ul>
-                </div>
+            </div>
+            
         </div>
     </div>
 </div>
@@ -428,6 +446,9 @@
             <div class='end-date'>
                 Nov 2254
             </div>
+            <div class='singular-date'>
+                
+            </div>
             <div class='start-date'>
                 Jan 2252
             </div>
@@ -438,15 +459,17 @@
             <div class='bottom-circle'></div>
         </div>
         <div class='box-column'>
-                <div class='entry-title'>
-                    Starfleet Academie
-                </div>
-                <div class='entry-body'>
-                    Meister in Raumschiffsbetrieb
-                </div>
+            <div class='entry-title'>
+                Starfleet Academie
+            </div>
+            <div class='entry-body'>
+                Meister in Raumschiffsbetrieb
+            </div>
+            
         </div>
     </div>
 </div>
+            
         </div>
     </body>
 </html>
