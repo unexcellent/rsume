@@ -17,12 +17,17 @@
             <div class='bottom-circle'></div>
         </div>
         <div class='box-column'>
-                <div class='entry-title'>
-                    {{title}}
+            <div class='entry-title'>
+                {{title}}
+            </div>
+            <div class='entry-body'>
+                {{body}}
+            </div>
+            {% if footer is defined %}
+                <div class='entry-footer'>
+                    {{footer}}
                 </div>
-                <div class='entry-body'>
-                    {{body}}
-                </div>
+            {% endif %}
         </div>
     </div>
 </div>

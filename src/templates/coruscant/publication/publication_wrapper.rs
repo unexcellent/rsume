@@ -29,13 +29,22 @@ pub fn build_publication_wrapper(
 fn build_entries(publications: &Vec<Publication>) -> String {
     let mut entries_html = String::new();
 
-    for entry in publications {
+    for publication in publications {
         entries_html.push_str(&build_entry_single_date(
-            entry.release_date.clone(),
-            entry.name.clone(),
-            entry.summary.clone(),
+            publication.release_date.clone(),
+            publication.name.clone(),
+            publication.summary.clone(),
+            Some(build_footer(publication)),
         ));
     }
 
     entries_html
+}
+
+fn build_footer(publication: &Publication) -> String {
+    format!(
+        "{} - Link: {}",
+        publication.publisher.clone(),
+        publication.url.clone()
+    )
 }
