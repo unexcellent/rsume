@@ -1,7 +1,12 @@
 use json_resume::Resume;
 use minijinja::context;
 
-use crate::{templates::template::Template, GloballySupportedLanguages};
+use crate::{
+    templates::{
+        coruscant::publication::publication_wrapper::build_publication_wrapper, template::Template,
+    },
+    GloballySupportedLanguages,
+};
 
 use super::{
     basics::basics_box::build_basics_wrapper,
@@ -35,8 +40,9 @@ impl Template for Coruscant {
             context!(
                 style => include_str!("style.css"),
                 basics => build_basics_wrapper(&self.resume_data, &self.language),
-                education => build_education_wrapper(&self.resume_data, &self.language),
                 work => build_work_wrapper(&self.resume_data, &self.language),
+                education => build_education_wrapper(&self.resume_data, &self.language),
+                publications => build_publication_wrapper(&self.resume_data, &self.language)
             ),
         );
 
