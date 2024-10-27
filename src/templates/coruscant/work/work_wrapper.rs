@@ -2,7 +2,7 @@ use minijinja::context;
 
 use crate::templates::coruscant::{
     data_model::{supported_resume_data::SupportedResumeData, work::Work},
-    shared::{entry::build_entry, render_template::render_template},
+    shared::{entry::build_entry_start_and_end, render_template::render_template},
     supported_languages::SupportedLanguages,
 };
 
@@ -30,7 +30,7 @@ fn build_entries(work: &Vec<Work>) -> String {
     let mut entries_html = String::new();
 
     for work_entry in work {
-        entries_html.push_str(&build_entry(
+        entries_html.push_str(&build_entry_start_and_end(
             work_entry.start_date.clone(),
             work_entry.end_date.clone(),
             work_entry.name.clone(),
