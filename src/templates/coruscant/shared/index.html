@@ -23,7 +23,7 @@
             <div class='entry-body'>
                 {{body}}
             </div>
-            {% if footer is defined %}
+            {% if (footer is defined) and (footer != none) %}
                 <div class='entry-footer'>
                     {{footer}}
                 </div>

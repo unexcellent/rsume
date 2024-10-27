@@ -8,6 +8,7 @@ pub fn build_entry_start_and_end(
     end_date: String,
     title: String,
     body: String,
+    footer: Option<String>,
 ) -> String {
     let rendered_template = render_template(
         include_str!("index.html"),
@@ -16,6 +17,7 @@ pub fn build_entry_start_and_end(
             end_date => end_date,
             title => title,
             body => body,
+            footer => footer,
         ),
     );
 

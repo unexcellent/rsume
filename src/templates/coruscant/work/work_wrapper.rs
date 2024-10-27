@@ -35,6 +35,7 @@ fn build_entries(work: &Vec<Work>) -> String {
             work_entry.end_date.clone(),
             work_entry.name.clone(),
             build_entry_body(work_entry),
+            None,
         ));
     }
 

@@ -35,6 +35,7 @@ fn build_entries(education: &Vec<Education>) -> String {
             education_entry.end_date.clone(),
             education_entry.institution.clone(),
             build_entry_body(education_entry),
+            build_entry_footer(education_entry),
         ));
     }
 
@@ -49,4 +50,11 @@ fn build_entry_body(education_entry: &Education) -> String {
     let area = education_entry.clone().area;
 
     format!("{study_type}{area}")
+}
+
+fn build_entry_footer(education_entry: &Education) -> Option<String> {
+    education_entry
+        .score
+        .as_ref()
+        .map(|score| format!("Score: {}", score))
 }

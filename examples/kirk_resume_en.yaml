@@ -61,6 +61,7 @@ education:
     endDate: Nov 2254
     studyType: "Master"
     area: "Starship Operations"
+    score: 87/100
 
 publications:
   - name: A Comparative Analysis of Starship Propulsion Systems
@@ -68,4 +69,3 @@ publications:
     releaseDate: Jul 2260
     url: iesdge.starfleet.int/papers/kirk-crisis-management
     summary: This paper compares the efficiency, speed, and safety of various starship propulsion systems, such as warp drives and impulse engines. It also explores the potential for future advancements in propulsion technology.
-
