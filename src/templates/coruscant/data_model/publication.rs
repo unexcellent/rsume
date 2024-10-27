@@ -1,6 +1,5 @@
 use super::utils::get_mandatory_field;
 
-#[allow(dead_code)]
 #[derive(Clone, Debug)]
 pub struct Publication {
     pub name: String,
