@@ -3,7 +3,11 @@ use minijinja::context;
 
 use crate::{
     templates::{
-        coruscant::publication::publication_wrapper::build_publication_wrapper, template::Template,
+        coruscant::{
+            project::project_wrapper::build_project_wrapper,
+            publication::publication_wrapper::build_publication_wrapper,
+        },
+        template::Template,
     },
     GloballySupportedLanguages,
 };
@@ -42,7 +46,8 @@ impl Template for Coruscant {
                 basics => build_basics_wrapper(&self.resume_data, &self.language),
                 work => build_work_wrapper(&self.resume_data, &self.language),
                 education => build_education_wrapper(&self.resume_data, &self.language),
-                publications => build_publication_wrapper(&self.resume_data, &self.language)
+                publications => build_publication_wrapper(&self.resume_data, &self.language),
+                projects => build_project_wrapper(&self.resume_data, &self.language)
             ),
         );
 

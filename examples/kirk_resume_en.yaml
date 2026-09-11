@@ -69,3 +69,27 @@ publications:
     releaseDate: Jul 2260
     url: iesdge.starfleet.int/papers/kirk-crisis-management
     summary: This paper compares the efficiency, speed, and safety of various starship propulsion systems, such as warp drives and impulse engines. It also explores the potential for future advancements in propulsion technology.
+
+projects:
+  - name: Kobayashi Maru Reprogramming
+    description: Redesigned the Kobayashi Maru simulation to allow for a no-win scenario bypass, demonstrating creative problem-solving under pressure.
+    startDate: Oct 2251
+    endDate: Nov 2251
+    roles:
+      - Lead Engineer
+    keywords:
+      - Simulation
+      - Systems Programming
+    url: starfleet.int/projects/kobayashi-maru
+    entity: Starfleet Academy
+
+  - name: Emergency Warp Core Ejection Protocol
+    description: Developed a new emergency protocol for warp core ejection that reduced response time by 40%, later adopted fleet-wide.
+    startDate: Mar 2266
+    endDate: Jun 2266
+    roles:
+      - Project Lead
+      - Systems Architect
+    keywords:
+      - Safety Systems
+      - Warp Engineering

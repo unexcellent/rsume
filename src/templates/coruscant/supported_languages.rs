@@ -47,4 +47,11 @@ impl SupportedLanguages {
             SupportedLanguages::DE => "Veröffentlichungen".to_string(),
         }
     }
+
+    pub fn projects_section_title(&self) -> String {
+        match self {
+            SupportedLanguages::EN => "Projects".to_string(),
+            SupportedLanguages::DE => "Projekte".to_string(),
+        }
+    }
 }

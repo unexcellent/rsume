@@ -1,6 +1,7 @@
 mod basics;
 mod data_model;
 mod education;
+mod project;
 mod publication;
 mod shared;
 mod supported_languages;

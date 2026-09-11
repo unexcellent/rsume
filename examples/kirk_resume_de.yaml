@@ -42,3 +42,27 @@ education:
     endDate: Nov 2254
     studyType: Meister
     area: Raumschiffsbetrieb
+
+projects:
+  - name: Kobayashi Maru Umprogrammierung
+    description: Neugestaltung der Kobayashi-Maru-Simulation zur Ermöglichung einer Umgehung des unausweichlichen Scheiterns – ein Beweis für kreatives Problemlösen unter Druck.
+    startDate: Okt 2251
+    endDate: Nov 2251
+    roles:
+      - Leitender Ingenieur
+    keywords:
+      - Simulation
+      - Systemprogrammierung
+    url: starfleet.int/projekte/kobayashi-maru
+    entity: Starfleet Academie
+
+  - name: Notfall-Warpkern-Auswurfprotokoll
+    description: Entwicklung eines neuen Notfallprotokolls für den Warpkernauswurf, das die Reaktionszeit um 40 % reduzierte und flottenweit eingeführt wurde.
+    startDate: Mär 2266
+    endDate: Jun 2266
+    roles:
+      - Projektleiter
+      - Systemarchitekt
+    keywords:
+      - Sicherheitssysteme
+      - Warpantriebstechnik

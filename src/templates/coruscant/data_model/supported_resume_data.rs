@@ -1,6 +1,6 @@
 use super::{
-    basics::Basics, education::Education, language::Language, publication::Publication,
-    utils::get_mandatory_field, work::Work,
+    basics::Basics, education::Education, language::Language, project::Project,
+    publication::Publication, utils::get_mandatory_field, work::Work,
 };
 
 /// The template requires some fields in the resume data that are optional in json_resume. These structs simplify the generation process.
@@ -12,6 +12,7 @@ pub struct SupportedResumeData {
     pub work: Vec<Work>,
     pub education: Vec<Education>,
     pub publications: Vec<Publication>,
+    pub projects: Vec<Project>,
 }
 impl SupportedResumeData {
     pub fn try_from(resume_data: json_resume::Resume) -> Result<Self, String> {
@@ -44,6 +45,11 @@ impl SupportedResumeData {
                 .publications
                 .into_iter()
                 .map(|publication| Publication::try_from(publication).unwrap())
+                .collect(),
+            projects: resume_data
+                .projects
+                .into_iter()
+                .map(|project| Project::try_from(project).unwrap())
                 .collect(),
         })
     }
