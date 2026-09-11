@@ -19,8 +19,31 @@
 .default-box {
   background-color: white;
   border-radius: 15pt;
-  box-shadow: 0 0 25pt rgb(220, 220, 220);
   padding: 20pt;
+}
+
+/* Soft shadow via a blurred pseudo-element instead of box-shadow: Chrome
+   prints blurred box-shadows (and alpha gradients) using soft masks that
+   Apple's Quartz renderer draws as solid grey boxes. A filtered element is
+   rasterized into a plain transparent bitmap at print time, which every
+   viewer composites correctly. The pseudo-element is empty, so the box
+   text stays vector. */
+.default-box,
+.box-column {
+  /* Needed so the ::before shadow can sit behind this box's background.
+     Do not add z-index here: the box must not create a stacking context. */
+  position: relative;
+}
+
+.default-box::before,
+.box-column::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 15pt;
+  background: rgb(190, 190, 190);
+  filter: blur(9pt);
 }
 
 .basics-box {
@@ -280,7 +303,6 @@
 
   background-color: white;
   border-radius: 15pt;
-  box-shadow: -5pt 0 20pt rgb(220, 220, 220);
   padding: 12pt;
 }
 
